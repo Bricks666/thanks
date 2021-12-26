@@ -1,0 +1,1 @@
+export { makeDeleteRequest } from "./makeRequests";
