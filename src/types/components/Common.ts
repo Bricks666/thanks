@@ -1,3 +1,3 @@
 export interface OnlyClassComponent {
-	className?: string;
+	readonly className?: string;
 }

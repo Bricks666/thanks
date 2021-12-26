@@ -1,0 +1,14 @@
+.collage {
+	display: grid;
+
+	grid-template-columns: repeat(5, calc(100% / 15));
+}
+
+.link {
+	text-decoration: none;
+	color: inherit;
+}
+
+.picture {
+	width: 100%;
+}

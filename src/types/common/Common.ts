@@ -4,3 +4,5 @@ export interface EmptyObject {
 	[key: string]: never;
 }
 export type EmptyFunction = () => void | Promise<void>;
+
+export type DateType = string;

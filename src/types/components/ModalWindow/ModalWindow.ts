@@ -2,7 +2,7 @@ import { OnlyClassComponent } from "..";
 import { EmptyFunction } from "../../common";
 
 export interface ModalWindowComponent extends OnlyClassComponent {
-	condition: boolean;
+	readonly condition: boolean;
 	/* TODO: описать обработчик */
-	close: EmptyFunction;
+	readonly close: EmptyFunction;
 }

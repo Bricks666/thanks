@@ -1,10 +1,12 @@
-import { ID, URL } from "../common";
+import { DateType, ID, URL } from "../common";
 
 export interface Post {
 	readonly id: ID;
+	readonly name: string;
 	readonly photo: URL;
 	readonly text: string;
 	readonly author: ID;
+	readonly date: DateType;
 }
 
 export enum PostsActionTypes {

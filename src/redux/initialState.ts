@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-duplicate-string */
 import { Store } from "../types/redux";
 
 export const initialState: Store = {
@@ -6,11 +7,71 @@ export const initialState: Store = {
 		name: "s",
 		photo: "../",
 	},
-	posts: [],
+	posts: [
+		{
+			id: 1,
+			author: "Rerere",
+			date: "2019-10-10T03:00:00",
+			name: "Благодарность для мужа",
+			photo: "https://lordfilmq.club/templates/lordfilm/images/bg.jpg",
+			text: "aslkkfhgbaskjdadhjksfbkajsadjkshfbkjajkhsdbfkjhjkasbdfkjhbvasdkfjadfhjksbaskjdadfjkshbkjaajksdhbfkjhjkasdbfkjfhjkasbdfkjfhjkbasdkfjdfhjkbaskjdadfjkshbakjsadjksghbvfkjgghjkasdvfkfgkhasvdfkfgkvasdfkdfgksvasdkghadfghksbvaksjadjkshbfkjajkshdbfkjhjkasdbfkjfhjkbasdkjdfjkhbasdkjadfjkshbaskdjadhjksfbkjasdadhjksbf",
+		},
+		{
+			id: 2,
+			author: "Rerere",
+			date: "2019-10-10T03:00:00",
+			name: "Благодарность для мужа",
+			photo: "https://lordfilmq.club/templates/lordfilm/images/bg.jpg",
+			text: "aslkkfhgbaskjdadhjksfbkajsadjkshfbkjajkhsdbfkjhjkasbdfkjhbvasdkfjadfhjksbaskjdadfjkshbkjaajksdhbfkjhjkasdbfkjfhjkasbdfkjfhjkbasdkfjdfhjkbaskjdadfjkshbakjsadjksghbvfkjgghjkasdvfkfgkhasvdfkfgkvasdfkdfgksvasdkghadfghksbvaksjadjkshbfkjajkshdbfkjhjkasdbfkjfhjkbasdkjdfjkhbasdkjadfjkshbaskdjadhjksfbkjasdadhjksbf",
+		},
+		{
+			id: 3,
+			author: "Rerere",
+			date: "2019-10-10T03:00:00",
+			name: "Благодарность для мужа",
+			photo: "https://lordfilmq.club/templates/lordfilm/images/bg.jpg",
+			text: "aslkkfhgbaskjdadhjksfbkajsadjkshfbkjajkhsdbfkjhjkasbdfkjhbvasdkfjadfhjksbaskjdadfjkshbkjaajksdhbfkjhjkasdbfkjfhjkasbdfkjfhjkbasdkfjdfhjkbaskjdadfjkshbakjsadjksghbvfkjgghjkasdvfkfgkhasvdfkfgkvasdfkdfgksvasdkghadfghksbvaksjadjkshbfkjajkshdbfkjhjkasdbfkjfhjkbasdkjdfjkhbasdkjadfjkshbaskdjadhjksfbkjasdadhjksbf",
+		},
+		{
+			id: 4,
+			author: "Rerere",
+			date: "2019-10-10T03:00:00",
+			name: "Благодарность для мужа",
+			photo: "https://lordfilmq.club/templates/lordfilm/images/bg.jpg",
+			text: "aslkkfhgbaskjdadhjksfbkajsadjkshfbkjajkhsdbfkjhjkasbdfkjhbvasdkfjadfhjksbaskjdadfjkshbkjaajksdhbfkjhjkasdbfkjfhjkasbdfkjfhjkbasdkfjdfhjkbaskjdadfjkshbakjsadjksghbvfkjgghjkasdvfkfgkhasvdfkfgkvasdfkdfgksvasdkghadfghksbvaksjadjkshbfkjajkshdbfkjhjkasdbfkjfhjkbasdkjdfjkhbasdkjadfjkshbaskdjadhjksfbkjasdadhjksbf",
+		},
+		{
+			id: 5,
+			author: "Rerere",
+			date: "2019-10-10T03:00:00",
+			name: "Благодарность для мужа",
+			photo: "https://lordfilmq.club/templates/lordfilm/images/bg.jpg",
+			text: "aslkkfhgbaskjdadhjksfbkajsadjkshfbkjajkhsdbfkjhjkasbdfkjhbvasdkfjadfhjksbaskjdadfjkshbkjaajksdhbfkjhjkasdbfkjfhjkasbdfkjfhjkbasdkfjdfhjkbaskjdadfjkshbakjsadjksghbvfkjgghjkasdvfkfgkhasvdfkfgkvasdfkdfgksvasdkghadfghksbvaksjadjkshbfkjajkshdbfkjhjkasdbfkjfhjkbasdkjdfjkhbasdkjadfjkshbaskdjadhjksfbkjasdadhjksbf",
+		},
+		{
+			id: 6,
+			author: "Rerere",
+			date: "2019-10-10T03:00:00",
+			name: "Благодарность для мужа",
+			photo: "https://lordfilmq.club/templates/lordfilm/images/bg.jpg",
+			text: "aslkkfhgbaskjdadhjksfbkajsadjkshfbkjajkhsdbfkjhjkasbdfkjhbvasdkfjadfhjksbaskjdadfjkshbkjaajksdhbfkjhjkasdbfkjfhjkasbdfkjfhjkbasdkfjdfhjkbaskjdadfjkshbakjsadjksghbvfkjgghjkasdvfkfgkhasvdfkfgkvasdfkdfgksvasdkghadfghksbvaksjadjkshbfkjajkshdbfkjhjkasdbfkjfhjkbasdkjdfjkhbasdkjadfjkshbaskdjadhjksfbkjasdadhjksbf",
+		},
+		{
+			id: 7,
+			author: "Rerere",
+			date: "2019-10-10T03:00:00",
+			name: "Благодарность для мужа",
+			photo: "https://lordfilmq.club/templates/lordfilm/images/bg.jpg",
+			text: "aslkkfhgbaskjdadhjksfbkajsadjkshfbkjajkhsdbfkjhjkasbdfkjhbvasdkfjadfhjksbaskjdadfjkshbkjaajksdhbfkjhjkasdbfkjfhjkasbdfkjfhjkbasdkfjdfhjkbaskjdadfjkshbakjsadjksghbvfkjgghjkasdvfkfgkhasvdfkfgkvasdfkdfgksvasdkghadfghksbvaksjadjkshbfkjajkshdbfkjhjkasdbfkjfhjkbasdkjdfjkhbasdkjadfjkshbaskdjadhjksfbkjasdadhjksbf",
+		},
+	],
 	loadings: {
 		loadingApp: true,
 		loadingPosts: false,
 		loadingProfile: false,
+	},
+	login: {
+		isLogin: false,
 	},
 	navigation: [
 		{
@@ -20,7 +81,7 @@ export const initialState: Store = {
 		},
 		{
 			id: 2,
-			path: "/posts/*",
+			path: "/posts",
 			text: "Благодарности",
 		},
 		{

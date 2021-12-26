@@ -2,16 +2,18 @@ import { applyMiddleware, combineReducers, createStore } from "redux";
 import { Store } from "../types/redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
-import { default as profile } from "./profileReducer";
-import { default as posts } from "./postsReducer";
-import { default as loadings } from "./loadingsReducer";
-import { default as navigation } from "./navigationReducer";
+import profileReducer from "./profileReducer";
+import postsReducer from "./postsReducer";
+import loadingsReducer from "./loadingsReducer";
+import navigationReducer from "./navigationReducer";
+import loginReducer from "./loginReducer";
 
 const rootReducer = combineReducers<Store>({
-	profile: profile,
-	posts: posts,
-	loadings: loadings,
-	navigation: navigation,
+	profile: profileReducer,
+	posts: postsReducer,
+	loadings: loadingsReducer,
+	navigation: navigationReducer,
+	login: loginReducer,
 });
 
 export const store = createStore(

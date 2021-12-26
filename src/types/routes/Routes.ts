@@ -2,7 +2,7 @@ import { ComponentType } from "react";
 import { ID, URL } from "../common";
 
 export interface Route {
-	id: ID;
-	path: URL;
-	Component: ComponentType;
+	readonly id: ID;
+	readonly path: URL;
+	readonly Component: ComponentType;
 }
