@@ -21,7 +21,7 @@ export const initialState: Store = {
 			author: "Rerere",
 			date: "2019-10-10T03:00:00",
 			name: "Благодарность для мужа",
-			photo: "https://lordfilmq.club/templates/lordfilm/images/bg.jpg",
+			photo: "https://i08.fotocdn.net/s116/a12aeff86aeacdff/gallery_xl/2648186076.jpg",
 			text: "aslkkfhgbaskjdadhjksfbkajsadjkshfbkjajkhsdbfkjhjkasbdfkjhbvasdkfjadfhjksbaskjdadfjkshbkjaajksdhbfkjhjkasdbfkjfhjkasbdfkjfhjkbasdkfjdfhjkbaskjdadfjkshbakjsadjksghbvfkjgghjkasdvfkfgkhasvdfkfgkvasdfkdfgksvasdkghadfghksbvaksjadjkshbfkjajkshdbfkjhjkasdbfkjfhjkbasdkjdfjkhbasdkjadfjkshbaskdjadhjksfbkjasdadhjksbf",
 		},
 		{
@@ -29,7 +29,7 @@ export const initialState: Store = {
 			author: "Rerere",
 			date: "2019-10-10T03:00:00",
 			name: "Благодарность для мужа",
-			photo: "https://lordfilmq.club/templates/lordfilm/images/bg.jpg",
+			photo: "https://avatars.mds.yandex.net/i?id=0f138f6dc97425079553ed0d6e3f5f1b-5448159-images-thumbs&ref=rim&n=33&w=225&h=150",
 			text: "aslkkfhgbaskjdadhjksfbkajsadjkshfbkjajkhsdbfkjhjkasbdfkjhbvasdkfjadfhjksbaskjdadfjkshbkjaajksdhbfkjhjkasdbfkjfhjkasbdfkjfhjkbasdkfjdfhjkbaskjdadfjkshbakjsadjksghbvfkjgghjkasdvfkfgkhasvdfkfgkvasdfkdfgksvasdkghadfghksbvaksjadjkshbfkjajkshdbfkjhjkasdbfkjfhjkbasdkjdfjkhbasdkjadfjkshbaskdjadhjksfbkjasdadhjksbf",
 		},
 		{

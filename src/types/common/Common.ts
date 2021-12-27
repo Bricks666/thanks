@@ -6,3 +6,7 @@ export interface EmptyObject {
 export type EmptyFunction = () => void | Promise<void>;
 
 export type DateType = string;
+export type MappedObject<
+	Key extends string | number | symbol = string,
+	Value = string
+> = Record<Key, Value>;

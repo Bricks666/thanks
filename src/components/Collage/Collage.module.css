@@ -7,8 +7,17 @@
 .link {
 	text-decoration: none;
 	color: inherit;
+
+	transition-property: transform;
+	transition-duration: 0.25s;
+	transition-timing-function: ease-in-out;
 }
 
 .picture {
 	width: 100%;
+}
+
+.link:hover {
+	transform: scale(1.2);
+	transform-origin: center;
 }

@@ -1,3 +1,6 @@
+import { TypedThunk } from ".";
+import { FormSubmitHandler, LoginFormValues } from "../components";
+
 export interface LoginState {
 	readonly isLogin: boolean;
 }
@@ -19,3 +22,6 @@ export type LoginActions = LogoutAction | LoginAction;
 
 export type LoginAC = () => LoginAction;
 export type LogoutAC = () => LogoutAction;
+
+
+export type LoginThunk = FormSubmitHandler<LoginFormValues, TypedThunk<void>>

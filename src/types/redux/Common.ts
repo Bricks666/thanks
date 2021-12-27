@@ -1,7 +1,7 @@
 import { ThunkAction } from "redux-thunk";
-import { LoadingsActions, PostsActions, ProfileActions, Store } from ".";
+import { LoadingsActions, LoginActions, PostsActions, ProfileActions, Store } from ".";
 
-export type RootActions = ProfileActions | PostsActions | LoadingsActions;
+export type RootActions = ProfileActions | PostsActions | LoadingsActions | LoginActions
 
 export type TypedThunk<R> = ThunkAction<
 	Promise<R>,

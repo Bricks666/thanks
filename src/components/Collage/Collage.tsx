@@ -1,5 +1,5 @@
-import classNames from "classnames";
 import React, { FC } from "react";
+import classNames from "classnames";
 import { Link } from "react-router-dom";
 import { usePosts } from "../../hooks";
 import { OnlyClassComponent } from "../../types/components";

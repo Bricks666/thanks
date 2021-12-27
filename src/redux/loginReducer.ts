@@ -2,6 +2,7 @@ import {
 	LoginAC,
 	LoginActions,
 	LoginActionTypes,
+	LoginThunk,
 	LogoutAC,
 } from "./../types/redux";
 import { initialState } from "./initialState";
@@ -38,5 +39,20 @@ export const loginAC: LoginAC = () => {
 export const logoutAC: LogoutAC = () => {
 	return {
 		type: LoginActionTypes.LOGOUT,
+	};
+};
+
+export const loginThunk: LoginThunk = (values, formApi) => {
+	return async (dispatch) => {
+		try {
+			// Возможно стоит перенести состояние загрузки в свои сектора
+			console.log(values);
+			console.log(formApi);
+			setTimeout(() => {
+				dispatch(loginAC());
+			}, 1000);
+		} catch (e) {
+			console.log(e);
+		}
 	};
 };

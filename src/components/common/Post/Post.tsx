@@ -1,8 +1,8 @@
 import classNames from "classnames";
 import React, { FC } from "react";
 import { Link } from "react-router-dom";
-import { PostComponent } from "../../types/components/Post";
-import { Picture } from "../common/Picture";
+import { PostComponent } from "../../../types/components/Post";
+import { Picture } from "../Picture";
 
 import PostStyle from "./Post.module.css";
 
