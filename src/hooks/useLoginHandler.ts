@@ -1,5 +1,5 @@
 import { useCallback } from "react";
-import { loginThunk } from "../redux/loginReducer";
+import { loginThunk } from "../redux";
 import { LoginSubmitHandler } from "../types/components";
 import { UseLoginHandler } from "../types/hooks";
 import { useTypedDispatch } from "./useTypedDispatch";

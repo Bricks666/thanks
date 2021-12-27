@@ -4,6 +4,7 @@ import {
 	NotFoundPage,
 	PostsPage,
 	RegistrationPage,
+	PostPage,
 } from "../pages";
 import { Route } from "../types/routes";
 
@@ -25,11 +26,16 @@ export const routes: Route[] = [
 	},
 	{
 		id: 4,
-		path: "/posts/*",
+		path: "/posts",
 		Component: PostsPage,
 	},
 	{
 		id: 5,
+		path: "/posts/:id",
+		Component: PostPage,
+	},
+	{
+		id: 6,
 		path: "*",
 		Component: NotFoundPage,
 	},

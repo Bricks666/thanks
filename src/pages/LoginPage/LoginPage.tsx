@@ -2,16 +2,19 @@ import React, { FC } from "react";
 import classNames from "classnames";
 import { SectionHeader } from "../../components/common/SectionHeader";
 import { OnlyClassComponent } from "../../types/components";
-import { Wrapper } from "../../components/common/Wrapper";
+import { PageWrapper } from "../../components/common/PageWrapper";
 import { LoginForm } from "../../components/LoginForm";
+import { BlockWrapper } from "../../components/common/BlockWrapper";
 
 export const LoginPage: FC<OnlyClassComponent> = ({ className }) => {
 	return (
 		<main className={classNames(className)}>
-			<Wrapper>
-				<SectionHeader>Вход</SectionHeader>
-				<LoginForm />
-			</Wrapper>
+			<PageWrapper>
+				<BlockWrapper>
+					<SectionHeader>Вход</SectionHeader>
+					<LoginForm />
+				</BlockWrapper>
+			</PageWrapper>
 		</main>
 	);
 };

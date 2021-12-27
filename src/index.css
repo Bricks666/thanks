@@ -12,3 +12,19 @@
 
 	clip: rect(0, 0, 0, 0);
 }
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+}
+
+body {
+	padding: 0;
+	margin: 0;
+
+	width: 100vw;
+	height: 100vh;
+
+	background-image: linear-gradient(116deg, #f5c211, #c01c28);
+	background-repeat: no-repeat;
+}

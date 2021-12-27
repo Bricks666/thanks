@@ -5,3 +5,4 @@ export * from "./Profile";
 export * from "./Store";
 export * from "./Navigation";
 export * from "./Login";
+export * from "./Registration";

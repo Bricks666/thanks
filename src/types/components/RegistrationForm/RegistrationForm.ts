@@ -1,5 +1,10 @@
+import { FormSubmitHandler } from "..";
+
 export interface RegistrationFormValues {
-  login: string;
-  password: string;
-  passwordAgain: string;
+	readonly login: string;
+	readonly password: string;
+	readonly passwordAgain: string;
 }
+
+export type RegistrationSubmitHandler =
+	FormSubmitHandler<RegistrationFormValues>;

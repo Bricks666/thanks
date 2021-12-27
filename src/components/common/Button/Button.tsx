@@ -7,6 +7,7 @@ export const Button: FC<ButtonComponent> = ({
 	className,
 	title,
 	type,
+	disabled,
 	onClick,
 }) => {
 	return (
@@ -15,6 +16,7 @@ export const Button: FC<ButtonComponent> = ({
 			onClick={onClick}
 			title={title}
 			type={type}
+			disabled={disabled}
 		>
 			{children}
 		</button>

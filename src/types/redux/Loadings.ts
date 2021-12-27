@@ -14,27 +14,27 @@ export enum LoadingActionTypes {
 }
 
 interface LoadingAppStartAction {
-	type: LoadingActionTypes.LOADING_APP_START;
+	readonly type: LoadingActionTypes.LOADING_APP_START;
 }
 
 interface LoadingAppEndAction {
-	type: LoadingActionTypes.LOADING_APP_END;
+	readonly type: LoadingActionTypes.LOADING_APP_END;
 }
 
 interface LoadingProfileStartAction {
-	type: LoadingActionTypes.LOADING_PROFILE_START;
+	readonly type: LoadingActionTypes.LOADING_PROFILE_START;
 }
 
 interface LoadingProfileEndAction {
-	type: LoadingActionTypes.LOADING_PROFILE_END;
+	readonly type: LoadingActionTypes.LOADING_PROFILE_END;
 }
 
 interface LoadingPostsStartAction {
-	type: LoadingActionTypes.LOADING_POSTS_START;
+	readonly type: LoadingActionTypes.LOADING_POSTS_START;
 }
 
 interface LoadingPostsEndAction {
-	type: LoadingActionTypes.LOADING_POSTS_END;
+	readonly type: LoadingActionTypes.LOADING_POSTS_END;
 }
 
 export type LoadingsActions =

@@ -1,9 +1,9 @@
 import React from "react";
-import { Form as ReactForm, Field as ReactField } from "react-final-form";
+import { Form as ReactForm } from "react-final-form";
 import { FormComponent } from "../../../types/components";
 import { Button } from "../Button";
-import { Field } from "../Field";
-import { createValidation } from "./createValidation";
+import { createValidator } from "./createValidator";
+import { renderField } from "./renderField";
 
 export const Form: FormComponent = ({
 	className,
@@ -16,30 +16,17 @@ export const Form: FormComponent = ({
 		throw new Error("form must have more than 0 fields");
 	}
 
-	const validator = validation && createValidation(validation);
+	const validator = validation && createValidator(validation);
 
 	return (
 		<ReactForm
-			className={className}
 			validate={validator}
 			onSubmit={onSubmit}
-			render={({ handleSubmit }) => {
+			render={({ handleSubmit, pristine }) => {
 				return (
-					<form onSubmit={handleSubmit}>
-						{fields.map((field) => {
-							// TODO: Сделать типизацию
-							let Component;
-							if (field.component === "field") {
-								return (
-									<ReactField
-										name={field.name}
-										render={Field}
-										key={field.name}
-									/>
-								);
-							}
-						})}
-						<Button type="submit" title={buttonText}>
+					<form className={className} onSubmit={handleSubmit}>
+						{fields.map(renderField)}
+						<Button type="submit" title={buttonText} disabled={pristine}>
 							{buttonText}
 						</Button>
 					</form>

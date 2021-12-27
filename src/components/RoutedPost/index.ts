@@ -1,1 +1,0 @@
-export { RoutedPost } from "./RoutesPost";

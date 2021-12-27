@@ -1,14 +1,9 @@
-import { FormEventHandler } from "react";
-import { FormSubmitHandler, OnlyClassComponent } from "..";
-
-export interface LoginFormComponent extends OnlyClassComponent {
-	handleSubmit: FormEventHandler<HTMLFormElement>;
-}
+import { FormSubmitHandler } from "..";
 
 export interface LoginFormValues {
-	login: string;
-	password: string;
-	remember: boolean;
+	readonly login: string;
+	readonly password: string;
+	readonly remember: boolean;
 }
 
 export type LoginSubmitHandler = FormSubmitHandler<LoginFormValues>;

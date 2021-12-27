@@ -5,6 +5,7 @@ import {
 	Post,
 	ProfileState,
 } from ".";
+import { EmptyObject } from "../common";
 
 export interface Store {
 	readonly profile: ProfileState;
@@ -12,4 +13,5 @@ export interface Store {
 	readonly loadings: LoadingsState;
 	readonly navigation: NavigationItem[];
 	readonly login: LoginState;
+	readonly registration: EmptyObject;
 }

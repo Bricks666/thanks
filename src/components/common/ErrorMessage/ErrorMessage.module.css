@@ -1,0 +1,20 @@
+.wrapper {
+	display: inline-grid;
+
+	width: max-content;
+	max-width: 300px;
+
+	border-radius: 16px;
+	border: 1px solid tomato;
+
+	padding: 10px;
+
+	background-color: rgba(255, 120, 96, 0.493);
+}
+
+.header {
+	margin: 0;
+
+	font-weight: 500;
+	color: rgb(160, 24, 0);
+}

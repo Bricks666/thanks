@@ -1,3 +1,5 @@
+export { useGetParams } from "./useGetParams";
+export { useRegistrationHandler } from "./useRegistrationHandler";
 export { useIsLogin } from "./useIsLogin";
 export { useNavigation } from "./useNavigation";
 export { usePosts } from "./usePosts";

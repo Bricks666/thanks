@@ -5,3 +5,5 @@ export * from "./UsePosts";
 export * from "./UseIsLogin";
 export * from "./UsePost";
 export * from "./UseLoginHandler";
+export * from "./UseRegistrationHandler";
+export * from "./UseGetParams";

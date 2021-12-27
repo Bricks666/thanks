@@ -7,6 +7,7 @@ import postsReducer from "./postsReducer";
 import loadingsReducer from "./loadingsReducer";
 import navigationReducer from "./navigationReducer";
 import loginReducer from "./loginReducer";
+import registrationReducer from "./registrationReducer";
 
 const rootReducer = combineReducers<Store>({
 	profile: profileReducer,
@@ -14,6 +15,7 @@ const rootReducer = combineReducers<Store>({
 	loadings: loadingsReducer,
 	navigation: navigationReducer,
 	login: loginReducer,
+	registration: registrationReducer,
 });
 
 export const store = createStore(

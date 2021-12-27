@@ -3,4 +3,4 @@ import { OnlyClassComponent } from "..";
 
 export interface FieldComponent
 	extends OnlyClassComponent,
-		FieldRenderProps<string, HTMLInputElement> {}
+		FieldRenderProps<string | undefined, HTMLInputElement> {}

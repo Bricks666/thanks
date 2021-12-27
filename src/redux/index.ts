@@ -9,3 +9,5 @@ export {
 	loadingProfileEndAC,
 	loadingProfileStartAC,
 } from "./loadingsReducer";
+export { loginAC, loginThunk, logoutAC } from "./loginReducer";
+export { registrationThunk } from "./registrationReducer";

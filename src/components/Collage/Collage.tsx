@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { usePosts } from "../../hooks";
 import { OnlyClassComponent } from "../../types/components";
 import { Picture } from "../common/Picture";
+import { SelectedPost } from "./SelectedPost/SelectedPost";
 
 import CollageStyle from "./Collage.module.css";
 
@@ -15,7 +16,7 @@ export const Collage: FC<OnlyClassComponent> = ({ className }) => {
 			{posts.map((post) => (
 				<Link
 					className={CollageStyle.link}
-					to={post.id.toString()}
+					to={"?postId=" + post.id.toString()}
 					key={post.id}
 				>
 					<Picture
@@ -25,6 +26,7 @@ export const Collage: FC<OnlyClassComponent> = ({ className }) => {
 					/>
 				</Link>
 			))}
+			<SelectedPost />
 		</section>
 	);
 };
