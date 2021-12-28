@@ -7,7 +7,7 @@ import { Post } from "../../common/Post";
 
 export const SelectedPost: FC<OnlyClassComponent> = ({ className }) => {
 	const postId = useGetParams("postId");
-	const post = usePost(postId || 0);
+	const post = usePost(Number(postId));
 	const navigate = useNavigate();
 	const closeHandler = useCallback(() => navigate(-1), [navigate]);
 

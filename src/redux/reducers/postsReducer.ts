@@ -1,5 +1,5 @@
-import { AddPostsAC, PostsActions, PostsActionTypes } from "../types/redux";
-import { initialState } from "./initialState";
+import { AddPostsAC, PostsActions, PostsActionTypes } from "../../types/redux";
+import { initialState } from "../initialState";
 
 export default function reducer(
 	state = initialState.posts,

@@ -1,0 +1,1 @@
+export { PostInfoForm } from "./PostInfoForm";

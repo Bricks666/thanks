@@ -1,7 +1,7 @@
 import { MouseEventHandler } from "react";
 import { OnlyClassComponent } from "..";
 
-type ButtonType = "submit" | "reset";
+type ButtonType = "submit" | "reset" | "button";
 
 export interface ButtonComponent extends OnlyClassComponent {
 	readonly type: ButtonType;

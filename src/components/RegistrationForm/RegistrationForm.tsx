@@ -1,61 +1,63 @@
 import React, { FC } from "react";
-import classNames from "classnames";
 import { useRegistrationHandler } from "../../hooks";
 import {
-	FormField,
-	FormValidation,
 	OnlyClassComponent,
 	RegistrationFormValues,
+	ValidationError,
+	Validator,
 } from "../../types/components";
-import { Form } from "../common/Form";
+import { Form, Field as ReactField } from "react-final-form";
+import { Field } from "../common/Field";
+import { Button } from "../common/Button";
 
-const registrationFields: FormField<RegistrationFormValues>[] = [
-	{
-		name: "login",
-		type: "text",
-		text: "Логин",
-	},
-	{
-		name: "password",
-		type: "password",
-		text: "Повторите пароль",
-	},
-	{
-		name: "passwordAgain",
-		type: "password",
-		text: "Повторите пароль",
-	},
-];
+const initialValues: RegistrationFormValues = {
+	login: "",
+	password: "",
+	passwordAgain: "",
+};
+const validator: Validator<RegistrationFormValues> = (values) => {
+	const errors: ValidationError<RegistrationFormValues> = {};
 
-const registrationValidation: FormValidation<RegistrationFormValues>[] = [
-	{
-		field: "login",
-		type: "not null",
-		errorMessage: "Поле логина не должно быть пустым",
-	},
-	{
-		field: "password",
-		type: "not null",
-		errorMessage: "Пароль не должен быть пустым",
-	},
-	{
-		field: "passwordAgain",
-		type: "equal",
-		errorMessage: "Пароли должны совпадать",
-		equivalent: "password",
-	},
-];
+	if (values.login === "") {
+		errors.login = "Поле логина не должно быть пустым";
+	}
+
+	if (values.password === "") {
+		errors.password = "Пароль не должен быть пустым";
+	}
+	if (values.passwordAgain !== values.password) {
+		errors.passwordAgain = "Пароли должны совпадать";
+	}
+
+	return errors;
+};
 
 export const RegistrationForm: FC<OnlyClassComponent> = ({ className }) => {
 	const registration = useRegistrationHandler();
 
 	return (
 		<Form
-			className={classNames(className)}
 			onSubmit={registration}
-			fields={registrationFields}
-			validation={registrationValidation}
-			buttonText="Зарегистрироваться"
+			initialValues={initialValues}
+			validate={validator}
+			render={({ handleSubmit, invalid }) => {
+				return (
+					<form className={className} onSubmit={handleSubmit}>
+						<ReactField name="login" render={Field}>
+							Логин
+						</ReactField>
+						<ReactField name="password" type="password" render={Field}>
+							Пароль
+						</ReactField>
+						<ReactField name="passwordAgain" type="password" render={Field}>
+							Повторите пароль
+						</ReactField>
+						<Button type="submit" title="Зарегистрироваться" disabled={invalid}>
+							Зарегистрироваться
+						</Button>
+					</form>
+				);
+			}}
 		/>
 	);
 };

@@ -1,9 +1,4 @@
-import { RegistrationThunk } from "../types/redux";
-import { initialState } from "./initialState";
-
-export default function reducer(state = initialState.registration) {
-	return state;
-}
+import { RegistrationThunk } from "../../types/redux";
 
 export const registrationThunk: RegistrationThunk = (values, formApi) => {
 	return async () => {

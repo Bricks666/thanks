@@ -1,0 +1,1 @@
+export { OnlyAuthUser } from "./OnlyAuthUser";

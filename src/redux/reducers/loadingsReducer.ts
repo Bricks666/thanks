@@ -7,8 +7,8 @@ import {
 	LoadingProfileEndAC,
 	LoadingProfileStartAC,
 	LoadingsActions,
-} from "../types/redux";
-import { initialState } from "./initialState";
+} from "../../types/redux";
+import { initialState } from "../initialState";
 
 export default function reducer(
 	state = initialState.loadings,

@@ -11,8 +11,9 @@ import { OnlyClassComponent } from "../../types/components";
 
 export const PostPage: FC<OnlyClassComponent> = ({ className }) => {
 	const { id } = useParams();
-	const post = usePost(id || 0);
+	const post = usePost(Number(id));
 	const navigate = useNavigate();
+	console.log("Post");
 
 	if (post === null) {
 		navigate("/posts", { replace: true });

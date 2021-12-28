@@ -5,4 +5,5 @@ export interface Route {
 	readonly id: ID;
 	readonly path: URL;
 	readonly Component: ComponentType;
+	readonly isAuth?: boolean;
 }

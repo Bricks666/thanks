@@ -2,8 +2,8 @@ import {
 	ProfileActions,
 	ProfileActionTypes,
 	SetProfileAC,
-} from "../types/redux";
-import { initialState } from "./initialState";
+} from "../../types/redux";
+import { initialState } from "../initialState";
 
 export default function reducer(
 	state = initialState.profile,

@@ -8,6 +8,7 @@ import { useIsLogin } from "../../hooks";
 import { SaveLink } from "../common/SaveLink";
 import { PageWrapper } from "../common/PageWrapper";
 import { BlockWrapper } from "../common/BlockWrapper";
+import { Link } from "react-router-dom";
 
 export const Header: FC<OnlyClassComponent> = ({ className }) => {
 	const isLogin = useIsLogin();
@@ -19,6 +20,7 @@ export const Header: FC<OnlyClassComponent> = ({ className }) => {
 					<h1 className="visibility-hidden">Благодарность маме и папе</h1>
 					<Logo />
 					<Navigation />
+					<Link to="/posts/create">Оставить Благодарность</Link>
 					{isLogin ? (
 						<ProfileLink />
 					) : (

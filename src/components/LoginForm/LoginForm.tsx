@@ -1,46 +1,61 @@
 import React, { FC } from "react";
-import classNames from "classnames";
 import { useLoginHandler } from "../../hooks";
 import {
-	FormField,
-	FormValidation,
 	LoginFormValues,
 	OnlyClassComponent,
+	ValidationError,
+	Validator,
 } from "../../types/components";
-import { Form } from "../common/Form";
+import { Form, Field as ReactField } from "react-final-form";
+import { Field } from "../common/Field";
+import { Button } from "../common/Button";
 
-const loginFields: FormField<LoginFormValues>[] = [
-	{ name: "login", text: "Логин", type: "text" },
-	{
-		name: "password",
-		text: "Пароль",
-		type: "text",
-	},
-];
+const validator: Validator<LoginFormValues> = (values) => {
+	const errors: ValidationError<LoginFormValues> = {};
 
-const loginValidation: FormValidation<LoginFormValues>[] = [
-	{
-		field: "login",
-		type: "not null",
-		errorMessage: "Поле логин не должно быть пустым",
-	},
-	{
-		field: "password",
-		type: "not null",
-		errorMessage: "Поле пароля не должно быть пустым",
-	},
-];
+	if (values.login === "") {
+		errors.login = "Поле логин не должно быть пустым";
+	}
+
+	if (values.password === "") {
+		errors.password = "Поле логин не должно быть пустым";
+	}
+
+	return errors;
+};
+
+const initialValues: LoginFormValues = {
+	login: "",
+	password: "",
+	remember: false,
+};
 
 export const LoginForm: FC<OnlyClassComponent> = ({ className }) => {
 	const login = useLoginHandler();
 
 	return (
-		<Form<LoginFormValues>
-			className={classNames(className)}
+		<Form
 			onSubmit={login}
-			fields={loginFields}
-			validation={loginValidation}
-			buttonText="Войти"
+			validate={validator}
+			initialValues={initialValues}
+			render={({ handleSubmit, invalid }) => {
+				return (
+					<form className={className} onSubmit={handleSubmit}>
+						<ReactField name="login" render={Field}>
+							Логин
+						</ReactField>
+						<ReactField name="password" type="password" render={Field}>
+							Пароль
+						</ReactField>
+						<ReactField name="remember" type="checkbox" render={Field}>
+							Запомнить меня
+						</ReactField>
+						<Button type="submit" title="Войти" disabled={invalid}>
+							Войти
+						</Button>
+					</form>
+				);
+			}}
 		/>
 	);
 };

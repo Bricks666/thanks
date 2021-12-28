@@ -13,3 +13,4 @@ export * from "./RegistrationForm";
 export * from "./Textarea";
 export * from "./OverlayPopup";
 export * from "./DateTime";
+export * from "./CreatePostForm";
