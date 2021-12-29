@@ -11,3 +11,7 @@ export * from "./UseOnlyAuthUser";
 export * from "./UseCurrentFormStep";
 export * from "./UseFormStepSubmitHandler";
 export * from "./UseGoStepBack";
+export * from "./UseProfile";
+export * from "./UsePayments";
+export * from "./UseContacts";
+export * from "./UseLogoutHandler";

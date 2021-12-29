@@ -17,5 +17,8 @@ export const List: ListComponent = ({ className, items, Card, type }) => {
 		case "fake": {
 			return <section className={classNames(className)}>{elements}</section>;
 		}
+		case "datalist": {
+			return <dl className={classNames(className)}>{elements}</dl>;
+		}
 	}
 };

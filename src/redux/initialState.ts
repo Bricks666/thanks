@@ -4,9 +4,17 @@ import { Store } from "../types/redux";
 export const initialState: Store = {
 	profile: {
 		id: 1,
-		name: "s",
+		name: "asdfasdfasdfasdfs",
 		photo: "../",
 	},
+	payments: [
+		{
+			id: 1,
+			date: new Date().toLocaleString(),
+			value: 123,
+			status: "success",
+		},
+	],
 	posts: [
 		{
 			id: 1,
@@ -76,31 +84,16 @@ export const initialState: Store = {
 		isLogin: false,
 	},
 	registration: {},
-	navigation: [
+	contacts: [
+		{
+			id: 0,
+			name: "Телефон",
+			value: "+79533396737",
+		},
 		{
 			id: 1,
-			path: "/",
-			text: "Главная",
-		},
-		{
-			id: 2,
-			path: "/posts",
-			text: "Благодарности",
-		},
-		{
-			id: 3,
-			path: "/how-to-do",
-			text: "Что такое благодарность",
-		},
-		{
-			id: 4,
-			path: "/about-thanks",
-			text: "Примеры благодарностей",
-		},
-		{
-			id: 5,
-			path: "/contacts",
-			text: "Контакты",
+			name: "Почта",
+			value: "email@gmail.com",
 		},
 	],
 };

@@ -9,11 +9,12 @@ import { SectionHeader } from "../../components/common/SectionHeader";
 import { usePost } from "../../hooks";
 import { OnlyClassComponent } from "../../types/components";
 
+import PostPageStyle from "./PostPage.module.css";
+
 export const PostPage: FC<OnlyClassComponent> = ({ className }) => {
 	const { id } = useParams();
 	const post = usePost(Number(id));
 	const navigate = useNavigate();
-	console.log("Post");
 
 	if (post === null) {
 		navigate("/posts", { replace: true });
@@ -25,11 +26,17 @@ export const PostPage: FC<OnlyClassComponent> = ({ className }) => {
 		<main className={className}>
 			<PageWrapper>
 				<BlockWrapper>
-					<SectionHeader>{post.name}</SectionHeader>
-					<Picture picture={post.photo} alt={post.name} />
-					<Paragraph>{post.text}</Paragraph>
-					<Paragraph>{post.author}</Paragraph>
-					<DateTime date={post.date} />
+					<div className={PostPageStyle.wrapper}>
+						<SectionHeader>{post.name}</SectionHeader>
+						<Picture
+							className={PostPageStyle.photo}
+							picture={post.photo}
+							alt={post.name}
+						/>
+						<Paragraph>{post.text}</Paragraph>
+						<Paragraph>Автор: {post.author}</Paragraph>
+						<DateTime date={post.date}>Дата добавления: </DateTime>
+					</div>
 				</BlockWrapper>
 			</PageWrapper>
 		</main>

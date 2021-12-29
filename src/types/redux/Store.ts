@@ -1,7 +1,8 @@
 import {
+	Contact,
 	LoadingsState,
 	LoginState,
-	NavigationItem,
+	Payment,
 	Post,
 	ProfileState,
 } from ".";
@@ -11,7 +12,8 @@ export interface Store {
 	readonly profile: ProfileState;
 	readonly posts: Post[];
 	readonly loadings: LoadingsState;
-	readonly navigation: NavigationItem[];
 	readonly login: LoginState;
 	readonly registration: EmptyObject;
+	readonly payments: Payment[];
+	readonly contacts: Contact[];
 }

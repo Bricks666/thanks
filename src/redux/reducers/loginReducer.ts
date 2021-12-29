@@ -20,7 +20,7 @@ export default function reducer(
 		case LoginActionTypes.LOGOUT: {
 			return {
 				...state,
-				login: false,
+				isLogin: false,
 			};
 		}
 		default: {

@@ -1,5 +1,5 @@
-import { EmptyFunction } from "../types/common";
+import { SimpleFunction } from "../types/common";
 
-export const clearSessionStorage: EmptyFunction = () => {
+export const clearSessionStorage: SimpleFunction = () => {
 	sessionStorage.clear();
 };

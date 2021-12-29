@@ -1,7 +1,7 @@
 import React, { FC } from "react";
 import { NavLink } from "react-router-dom";
 import classNames from "classnames";
-import { NavigationItemComponent } from "../../../types/components";
+import { NavigationItemComponent } from "../../types/components";
 
 export const NavigationItem: FC<NavigationItemComponent> = ({
 	className,

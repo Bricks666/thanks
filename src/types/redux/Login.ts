@@ -1,3 +1,4 @@
+import { SimpleFunction } from "./../common/Common";
 import { TypedThunk } from ".";
 import { FormSubmitHandler, LoginFormValues } from "../components";
 
@@ -19,6 +20,7 @@ interface LogoutAction {
 }
 
 export type LoginThunk = FormSubmitHandler<LoginFormValues, TypedThunk<void>>;
+export type LogoutThunk = SimpleFunction<TypedThunk<void>>;
 
 export type LoginActions = LogoutAction | LoginAction;
 

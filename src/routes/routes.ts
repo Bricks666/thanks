@@ -7,14 +7,16 @@ import {
 	PostPage,
 	CreatePostPage,
 	ProfilePage,
+	ContactsPage,
 } from "../pages";
 import { Route } from "../types/routes";
 
 export const routes: Route[] = [
 	{
 		id: 0,
-		path: "/profile",
+		path: "/profile/*",
 		Component: ProfilePage,
+		isAuth: true,
 	},
 	{
 		id: 1,
@@ -35,7 +37,6 @@ export const routes: Route[] = [
 		id: 4,
 		path: "/posts",
 		Component: PostsPage,
-		isAuth: true,
 	},
 	{
 		id: 5,
@@ -50,6 +51,11 @@ export const routes: Route[] = [
 	},
 	{
 		id: 7,
+		path: "/contacts",
+		Component: ContactsPage,
+	},
+	{
+		id: 8,
 		path: "*",
 		Component: NotFoundPage,
 	},

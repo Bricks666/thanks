@@ -6,3 +6,5 @@ export * from "./Store";
 export * from "./Navigation";
 export * from "./Login";
 export * from "./Registration";
+export * from "./Payments";
+export * from "./Contacts";

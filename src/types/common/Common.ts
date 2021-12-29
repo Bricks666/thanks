@@ -6,7 +6,7 @@ export interface EmptyObject {
 
 export type DateType = string;
 
-export type EmptyFunction = () => void;
+export type SimpleFunction<R = void> = () => R;
 
 export interface MappedObject<Value = string> {
 	[key: string]: Value;

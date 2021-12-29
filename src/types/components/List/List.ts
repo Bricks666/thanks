@@ -2,7 +2,7 @@ import { ComponentType, ReactElement } from "react";
 import { OnlyClassComponent } from "..";
 import { ID } from "../../common";
 
-type ListType = "numbered" | "unnumbered" | "fake";
+type ListType = "numbered" | "unnumbered" | "fake" | "datalist";
 
 interface ListProps<T> extends OnlyClassComponent {
 	readonly items: T[];

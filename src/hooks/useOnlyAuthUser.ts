@@ -12,5 +12,5 @@ export const useOnlyAuthUser: UseOnlyAuthUser = () => {
 		if (isLogin === false) {
 			navigate("/login", { state: location, replace: true });
 		}
-	}, []);
+	}, [isLogin]);
 };

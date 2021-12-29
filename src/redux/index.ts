@@ -10,4 +10,5 @@ export {
 	loadingProfileStartAC,
 } from "./reducers";
 export { loginAC, logoutAC } from "./reducers";
+export { setPaymentsAC } from "./reducers";
 export { registrationThunk, loginThunk } from "./thunks";

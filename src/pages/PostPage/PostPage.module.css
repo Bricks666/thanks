@@ -1,0 +1,11 @@
+.wrapper {
+	display: grid;
+	grid-template-columns: 400px 1fr;
+	column-gap: 16px;
+}
+
+.photo {
+	order: -1;
+
+	grid-row: span 2;
+}

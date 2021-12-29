@@ -1,2 +1,4 @@
 export { getIsLogin } from "./login";
-export { getNavigation } from "./navigation";
+export { getProfile } from "./profile";
+export { getPayments } from "./payments";
+export { getContacts } from "./contacts";
