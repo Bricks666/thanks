@@ -22,9 +22,9 @@ export const CheckCreatedPostForm: FC<StepFormComponent> = ({
 			<dl>
 				{Object.entries(sessionValues).map(([field, value]) => {
 					return (
-						<>
+						<div key={field}>
 							<dt>{field}</dt>: <dd>{value}</dd>
-						</>
+						</div>
 					);
 				})}
 			</dl>

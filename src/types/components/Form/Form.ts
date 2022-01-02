@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import { FormApi } from "final-form";
-import { MappedObject, UnReadonly } from "../../common";
+import { AnyObject, UnReadonly } from "../../common";
 
 export type ValidationError<T extends object> = Partial<UnReadonly<T>>;
 
@@ -16,6 +15,4 @@ export type FormSubmitHandler<T extends object, R = void | Promise<void>> = (
 	errorHandler?: SubmitionErrorHandler<T>
 ) => R;
 
-export type Validator<T extends MappedObject<any>> = (
-	values: T
-) => ValidationError<T>;
+export type Validator<T extends AnyObject> = (values: T) => ValidationError<T>;

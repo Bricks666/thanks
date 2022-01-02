@@ -1,3 +1,4 @@
+export { useKeyListener } from "./useKeyListener";
 export { useFormStepSubmitHandler } from "./useFormStepSubmitHandler";
 export { useCurrentFormStep } from "./useCurrentFormStep";
 export { useOnlyAuthUser } from "./useOnlyAuthUser";
@@ -10,3 +11,6 @@ export { useLoginHandler } from "./useLoginHandler";
 export { useGoStepBack } from "./useGoStepBack";
 export { useProfile } from "./useProfile";
 export { useLogoutHandler } from "./useLogoutHandler";
+export { useNavigation } from "./useNavigation";
+export { useInstructions } from "./useInstructions";
+export { useHover } from "./useHover";

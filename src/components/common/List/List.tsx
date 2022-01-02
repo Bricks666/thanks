@@ -2,9 +2,16 @@ import classNames from "classnames";
 import React, { ReactElement } from "react";
 import { ListComponent } from "../../../types/components";
 
-export const List: ListComponent = ({ className, items, Card, type }) => {
+export const List: ListComponent = ({
+	className,
+	items,
+	Card,
+	type,
+	indexedBy,
+	itemClassName,
+}) => {
 	const elements: ReactElement[] = items.map((item) => (
-		<Card {...item} key={item.id} />
+		<Card {...item} key={item[indexedBy]} className={itemClassName} />
 	));
 
 	switch (type) {

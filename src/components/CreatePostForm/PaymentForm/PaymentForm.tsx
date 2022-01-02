@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { Form, Field as ReactField } from "react-final-form";
+import { Form, Field } from "react-final-form";
 import { useFormStepSubmitHandler, useGoStepBack } from "../../../hooks";
 import { getFromSessionStorage } from "../../../services";
 import {
@@ -9,7 +9,7 @@ import {
 	Validator,
 } from "../../../types/components";
 import { Button } from "../../common/Button";
-import { Field } from "../../common/Field";
+import { Input } from "../../common/Input/Input";
 
 const validator: Validator<PaymentFormValues> = (values) => {
 	const errors: ValidationError<PaymentFormValues> = {};
@@ -49,27 +49,29 @@ export const PaymentForm: FC<StepFormComponent> = ({
 
 	const sessionValues =
 		getFromSessionStorage<PaymentFormValues>(formName) || initialValues;
+
 	return (
 		<Form
 			onSubmit={submitHandler}
 			initialValues={sessionValues}
 			validate={validator}
+			subscription={{ submitting: true, invalid: true }}
 			render={({ handleSubmit, invalid }) => {
 				return (
 					<div className={className}>
 						<form onSubmit={handleSubmit}>
-							<ReactField name="card" render={Field}>
+							<Field name="card" render={Input}>
 								Номер карты
-							</ReactField>
-							<ReactField name="owner" render={Field}>
+							</Field>
+							<Field name="owner" render={Input}>
 								Владелец
-							</ReactField>
-							<ReactField name="date" type="date" render={Field}>
+							</Field>
+							<Field name="date" type="date" render={Input}>
 								Дата окончания срока действия
-							</ReactField>
-							<ReactField name="cvv" render={Field}>
+							</Field>
+							<Field name="cvv" render={Input}>
 								CVV-коде
-							</ReactField>
+							</Field>
 							<Button type="submit" title="Далее" disabled={invalid}>
 								Далее
 							</Button>

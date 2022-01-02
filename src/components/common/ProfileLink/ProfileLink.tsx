@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import classNames from "classnames";
 import { OnlyClassComponent } from "../../../types/components";
 import { Button } from "../Button";
-import { useLogoutHandler } from "../../../hooks";
+import { useLogoutHandler } from "../../../hooks/";
 
 export const ProfileLink: FC<OnlyClassComponent> = ({ className }) => {
 	const logoutHandler = useLogoutHandler();
+
 	return (
 		<section>
 			<img alt="Ваше фото профиля" />

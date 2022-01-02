@@ -8,6 +8,12 @@ export const PaymentList: FC<OnlyClassComponent> = ({ className }) => {
 	const payments = usePayments();
 
 	return (
-		<List className={className} items={payments} Card={Payment} type="fake" />
+		<List
+			className={className}
+			items={payments}
+			Card={Payment}
+			type="fake"
+			indexedBy="id"
+		/>
 	);
 };

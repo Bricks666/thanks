@@ -5,4 +5,5 @@ export interface PostInfoFormValues {
 	readonly name: string;
 	readonly text: string;
 	readonly photo: URL;
+	readonly escort: string;
 }

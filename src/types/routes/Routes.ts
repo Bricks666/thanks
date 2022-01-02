@@ -1,8 +1,7 @@
 import { ComponentType } from "react";
-import { ID, URL } from "../common";
+import { URL } from "../common";
 
 export interface Route {
-	readonly id: ID;
 	readonly path: URL;
 	readonly Component: ComponentType;
 	readonly isAuth?: boolean;

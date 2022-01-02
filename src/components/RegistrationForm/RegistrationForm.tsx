@@ -6,9 +6,9 @@ import {
 	ValidationError,
 	Validator,
 } from "../../types/components";
-import { Form, Field as ReactField } from "react-final-form";
-import { Field } from "../common/Field";
+import { Form, Field } from "react-final-form";
 import { Button } from "../common/Button";
+import { Input } from "../common/Input/Input";
 
 const initialValues: RegistrationFormValues = {
 	login: "",
@@ -40,18 +40,19 @@ export const RegistrationForm: FC<OnlyClassComponent> = ({ className }) => {
 			onSubmit={registration}
 			initialValues={initialValues}
 			validate={validator}
+			subscription={{ submitting: true, invalid: true }}
 			render={({ handleSubmit, invalid }) => {
 				return (
 					<form className={className} onSubmit={handleSubmit}>
-						<ReactField name="login" render={Field}>
+						<Field name="login" render={Input}>
 							Логин
-						</ReactField>
-						<ReactField name="password" type="password" render={Field}>
+						</Field>
+						<Field name="password" type="password" render={Input}>
 							Пароль
-						</ReactField>
-						<ReactField name="passwordAgain" type="password" render={Field}>
+						</Field>
+						<Field name="passwordAgain" type="password" render={Input}>
 							Повторите пароль
-						</ReactField>
+						</Field>
 						<Button type="submit" title="Зарегистрироваться" disabled={invalid}>
 							Зарегистрироваться
 						</Button>

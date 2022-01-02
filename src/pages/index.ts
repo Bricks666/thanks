@@ -7,3 +7,4 @@ export { PostPage } from "./PostPage";
 export { CreatePostPage } from "./CreatePostPage";
 export { ProfilePage } from "./ProfilePage";
 export { ContactsPage } from "./ContactsPage";
+export { InstructionPage } from "./InstructionPage";

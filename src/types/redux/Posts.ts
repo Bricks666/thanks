@@ -5,7 +5,7 @@ export interface Post {
 	readonly name: string;
 	readonly photo: URL;
 	readonly text: string;
-	readonly author: ID;
+	readonly author: string;
 	readonly date: DateType;
 }
 

@@ -96,4 +96,35 @@ export const initialState: Store = {
 			value: "email@gmail.com",
 		},
 	],
+	instructions: [
+		{
+			picture: "aas",
+			text: "adasdjbasdlnadsnjansdljdjlnasdnjandlkjasndjnadnljn",
+		},
+		{
+			picture: "aas",
+			text: "adasdjbasdlnadsnjansdljdjlnasdnjandlkjasndjnadnljn",
+		},
+
+		{
+			picture: "aas",
+			text: "adasdjbasdlnadsnjansdljdjlnasdnjandlkjasndjnadnljn",
+		},
+		{
+			picture: "aas",
+			text: "adasdjbasdlnadsnjansdljdjlnasdnjandlkjasndjnadnljn",
+		},
+		{
+			picture: "aas",
+			text: "adasdjbasdlnadsnjansdljdjlnasdnjandlkjasndjnadnljn",
+		},
+		{
+			picture: "aas",
+			text: "adasdjbasdlnadsnjansdljdjlnasdnjandlkjasndjnadnljn",
+		},
+		{
+			picture: "aas",
+			text: "adasdjbasdlnadsnjansdljdjlnasdnjandlkjasndjnadnljn",
+		},
+	],
 };

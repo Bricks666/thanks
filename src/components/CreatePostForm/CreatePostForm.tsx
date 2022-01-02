@@ -1,5 +1,4 @@
 import React, { FC, useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import { useCurrentFormStep } from "../../hooks";
 import { clearSessionStorage } from "../../services/clearSessionStorage";
 import { OnlyClassComponent, Step } from "../../types/components";
@@ -37,10 +36,7 @@ export const CreatePostForm: FC<OnlyClassComponent> = ({ className }) => {
 
 	return (
 		<section className={className}>
-			<h2>Написание благодарности</h2>
-			<h3>
-				{currentStep.title} {stepNumber + 1} / {steps.length}
-			</h3>
+			<h3>{`Шаг ${stepNumber + 1} / ${steps.length}`}</h3>
 			{currentStep && (
 				<currentStep.Component step={stepNumber} formName={FORM_NAME} />
 			)}

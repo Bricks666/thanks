@@ -1,5 +1,6 @@
 import React, { FC } from "react";
-import { Field as ReactField, Form } from "react-final-form";
+import { Field as Field, Form } from "react-final-form";
+import { escortTypes } from "../../../data";
 import { useFormStepSubmitHandler } from "../../../hooks";
 import { getFromSessionStorage } from "../../../services";
 import {
@@ -9,19 +10,20 @@ import {
 	Validator,
 } from "../../../types/components";
 import { Button } from "../../common/Button";
-import { Field } from "../../common/Field";
+import { Input } from "../../common/Input/Input";
 import { Textarea } from "../../common/Textarea";
+import { EscortType } from "../../EscortType";
 
 const initialValue: PostInfoFormValues = {
 	author: "",
 	name: "",
 	photo: "",
 	text: "",
+	escort: escortTypes[0].value,
 };
 
 const validator: Validator<PostInfoFormValues> = (values) => {
 	const errors: ValidationError<PostInfoFormValues> = {};
-
 	if (values.author === "") {
 		errors.author = "Имя благодарящего должно быть заполнено";
 	}
@@ -58,18 +60,19 @@ export const PostInfoForm: FC<StepFormComponent> = ({
 				return (
 					<div>
 						<form className={className} onSubmit={handleSubmit}>
-							<ReactField name="author" render={Field}>
+							<Field name="author" render={Input}>
 								Кто благодарит
-							</ReactField>
-							<ReactField name="name" render={Field}>
+							</Field>
+							<Field name="name" render={Input}>
 								Кого благодарите
-							</ReactField>
-							<ReactField name="text" render={Textarea}>
+							</Field>
+							<Field name="text" render={Textarea}>
 								Слова благодарности
-							</ReactField>
-							<ReactField name="photo" render={Field}>
+							</Field>
+							<Field name="photo" render={Input}>
 								Фото
-							</ReactField>
+							</Field>
+							<EscortType />
 							<Button type="submit" title="Далее" disabled={invalid}>
 								Далее
 							</Button>

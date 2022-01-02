@@ -14,12 +14,12 @@ export enum PaymentsActionTypes {
 }
 
 interface SetPaymentsPayload {
-	payments: Payment[];
+	readonly payments: Payment[];
 }
 
 export interface SetPaymentsAction {
-	type: PaymentsActionTypes.SET_PAYMENTS;
-	payload: SetPaymentsPayload;
+	readonly type: PaymentsActionTypes.SET_PAYMENTS;
+	readonly payload: SetPaymentsPayload;
 }
 
 export type PaymentsActions = SetPaymentsAction;

@@ -13,7 +13,7 @@ export const App: FC<OnlyClassComponent> = () => {
 		<div className={AppStyle.app}>
 			<Header />
 			<Routes>
-				{routes.map(({ id, Component, path, isAuth }) => (
+				{routes.map(({ Component, path, isAuth }) => (
 					<Route
 						path={path}
 						element={
@@ -25,7 +25,7 @@ export const App: FC<OnlyClassComponent> = () => {
 								<Component />
 							)
 						}
-						key={id}
+						key={path}
 					/>
 				))}
 			</Routes>

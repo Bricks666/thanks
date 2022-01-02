@@ -2,7 +2,7 @@
 	"name": "thanks",
 	"version": "0.1.0",
 	"private": true,
-  "homepage":"http://bricks666.github.io/thanks",
+	"homepage": "http://bricks666.github.io/thanks",
 	"dependencies": {
 		"axios": "^0.24.0",
 		"classnames": "^2.3.1",
@@ -29,11 +29,13 @@
 		"@typescript-eslint/eslint-plugin": "^5.8.0",
 		"@typescript-eslint/parser": "^5.8.0",
 		"eslint": "^8.5.0",
+		"eslint-plugin-jest": "^25.3.4",
 		"eslint-plugin-jsx-a11y": "^6.5.1",
 		"eslint-plugin-react": "^7.28.0",
 		"eslint-plugin-react-hooks": "^4.3.0",
 		"eslint-plugin-sonarjs": "^0.11.0",
 		"gh-pages": "^3.2.3",
+		"jest": "^27.4.5",
 		"redux-devtools-extension": "^2.13.9",
 		"typescript": "^4.5.4"
 	},
@@ -43,7 +45,7 @@
 		"test": "react-scripts test",
 		"eject": "react-scripts eject",
 		"lint": "eslint --ext .ts,.tsx src/",
-    "deploy": "gh-pages -d build"
+		"deploy": "npm run lint && npm run test && gh-pages -d build"
 	},
 	"eslintConfig": {
 		"extends": [

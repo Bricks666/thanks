@@ -8,7 +8,6 @@ export const ErrorMessage: FC<OnlyClassComponent> = ({
 	className,
 	children,
 }) => {
-	console.log(children);
 	return (
 		<div className={classNames(ErrorMessageStyle.wrapper, className)}>
 			<p className={ErrorMessageStyle.header}>Ошибка</p>

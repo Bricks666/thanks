@@ -8,8 +8,7 @@ export const DateTime: FC<DateTimeComponent> = ({
 }) => {
 	return (
 		<time className={className} dateTime={date}>
-			{children}
-			{new Date(date).toLocaleString()}
+			{children} {new Date(date).toLocaleString()}
 		</time>
 	);
 };

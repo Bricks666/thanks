@@ -8,13 +8,17 @@ export const Textarea: FC<TextareaComponent> = ({
 	children,
 	input,
 	meta,
+	disabled,
+	readonly,
 }) => {
 	const showError = meta.touched && meta.error;
+	const disable = disabled || meta.submitting;
+
 	return (
 		<label className={classNames(className)}>
 			{showError && <ErrorMessage>{meta.error}</ErrorMessage>}
 			{children}
-			<textarea {...input} />
+			<textarea {...input} disabled={disable} readOnly={readonly} />
 		</label>
 	);
 };

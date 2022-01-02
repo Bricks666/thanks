@@ -1,5 +1,6 @@
 import {
 	Contact,
+	Instruction,
 	LoadingsState,
 	LoginState,
 	Payment,
@@ -16,4 +17,5 @@ export interface Store {
 	readonly registration: EmptyObject;
 	readonly payments: Payment[];
 	readonly contacts: Contact[];
+	readonly instructions: Instruction[];
 }

@@ -1,7 +1,6 @@
-import { ID, URL } from "../common";
+import { URL } from "../common";
 
 export interface NavigationItem {
-	readonly id: ID;
 	readonly path: URL;
 	readonly text: string;
 }

@@ -7,6 +7,7 @@ import profileReducer from "./profileReducer";
 import registrationReducer from "./registrationReducer";
 import paymentsReducer from "./paymentsReducer";
 import contactsReducer from "./contactsReducer";
+import instructionReducer from "./instructionReducer";
 
 export const rootState = combineReducers<Store>({
 	loadings: loadingsReducer,
@@ -16,6 +17,7 @@ export const rootState = combineReducers<Store>({
 	registration: registrationReducer,
 	payments: paymentsReducer,
 	contacts: contactsReducer,
+	instructions: instructionReducer,
 });
 
 export { setProfileAC } from "./profileReducer";
@@ -31,3 +33,4 @@ export {
 export { loginAC, logoutAC } from "./loginReducer";
 export { setPaymentsAC } from "./paymentsReducer";
 export { setContactsAC } from "./contactsReducer";
+export { setInstructionAC } from "./instructionReducer";

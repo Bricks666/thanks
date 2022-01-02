@@ -1,6 +1,4 @@
 export { store } from "./store";
-export { setProfileAC } from "./reducers";
-export { addPostsAC } from "./reducers";
 export {
 	loadingAppEndAC,
 	loadingAppStartAC,
@@ -8,7 +6,11 @@ export {
 	loadingPostsStartAC,
 	loadingProfileEndAC,
 	loadingProfileStartAC,
+	loginAC,
+	logoutAC,
+	setPaymentsAC,
+	setProfileAC,
+	addPostsAC,
+	setInstructionAC,
 } from "./reducers";
-export { loginAC, logoutAC } from "./reducers";
-export { setPaymentsAC } from "./reducers";
 export { registrationThunk, loginThunk } from "./thunks";

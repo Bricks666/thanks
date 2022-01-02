@@ -1,5 +1,5 @@
 import { OnlyClassComponent } from "..";
-import { NavigationItem } from "../../redux";
+import { NavigationItem } from "../../data";
 
 export interface NavigationItemComponent
 	extends OnlyClassComponent,

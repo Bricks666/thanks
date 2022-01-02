@@ -6,8 +6,8 @@ import {
 	ValidationError,
 	Validator,
 } from "../../types/components";
-import { Form, Field as ReactField } from "react-final-form";
-import { Field } from "../common/Field";
+import { Form, Field } from "react-final-form";
+import { Input } from "../common/Input/Input";
 import { Button } from "../common/Button";
 
 const validator: Validator<LoginFormValues> = (values) => {
@@ -38,18 +38,19 @@ export const LoginForm: FC<OnlyClassComponent> = ({ className }) => {
 			onSubmit={login}
 			validate={validator}
 			initialValues={initialValues}
+			subscription={{ submitting: true, invalid: true }}
 			render={({ handleSubmit, invalid }) => {
 				return (
 					<form className={className} onSubmit={handleSubmit}>
-						<ReactField name="login" render={Field}>
+						<Field name="login" render={Input}>
 							Логин
-						</ReactField>
-						<ReactField name="password" type="password" render={Field}>
+						</Field>
+						<Field name="password" type="password" render={Input}>
 							Пароль
-						</ReactField>
-						<ReactField name="remember" type="checkbox" render={Field}>
+						</Field>
+						<Field name="remember" type="checkbox" render={Input}>
 							Запомнить меня
-						</ReactField>
+						</Field>
 						<Button type="submit" title="Войти" disabled={invalid}>
 							Войти
 						</Button>

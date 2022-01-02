@@ -12,6 +12,7 @@ export const ContactsList: FC<OnlyClassComponent> = ({ className }) => {
 			items={contacts}
 			Card={Contact}
 			type="datalist"
+			indexedBy="id"
 		/>
 	);
 };

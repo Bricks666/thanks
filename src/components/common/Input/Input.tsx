@@ -1,20 +1,23 @@
 import React, { FC } from "react";
 import classNames from "classnames";
-import { FieldComponent } from "../../../types/components";
 import { ErrorMessage } from "../ErrorMessage";
+import { InputComponent } from "../../../types/components";
 
-export const Field: FC<FieldComponent> = ({
+export const Input: FC<InputComponent> = ({
 	className,
 	input,
 	children,
 	meta,
+	disabled,
+	readonly,
 }) => {
 	const showError = meta.touched && meta.error;
+	const disable = meta.submitting || disabled;
 	return (
 		<label className={classNames(className)}>
 			{children}
 			{showError && <ErrorMessage>{meta.error}</ErrorMessage>}
-			<input {...input} disabled={meta.submitting} />
+			<input {...input} disabled={disable} readOnly={readonly} />
 		</label>
 	);
 };
