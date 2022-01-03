@@ -1,12 +1,12 @@
-import { ComponentType } from "react";
-import { OnlyClassComponent } from "..";
+export type Gender = "male" | "female";
 
-export interface Step {
-	readonly title: string;
-	readonly Component: ComponentType<StepFormComponent>;
-}
-
-export interface StepFormComponent extends OnlyClassComponent {
-	readonly step: number;
-	readonly formName: string;
+export interface CreatePostFormValues {
+	firstName: string;
+	secondName: string;
+	patronymic: string;
+	gender: Gender;
+	postHeader: string;
+	briefAboutPerson: string;
+	whyThanks: string;
+	photo: File | null;
 }

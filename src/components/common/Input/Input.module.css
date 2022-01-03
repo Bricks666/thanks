@@ -1,0 +1,12 @@
+.label {
+	display: grid;
+	row-gap: 10px;
+
+	height: min-content;
+}
+
+.input {
+	width: 250px;
+
+	padding: 5px;
+}

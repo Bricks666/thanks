@@ -1,1 +1,0 @@
-export { CheckCreatedPostForm } from "./CheckCreatedPostForm";

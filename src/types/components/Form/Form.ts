@@ -1,8 +1,9 @@
 import { FormApi } from "final-form";
-import { AnyObject, UnReadonly } from "../../common";
+import { AnyObject } from "../../common";
 
-export type ValidationError<T extends object> = Partial<UnReadonly<T>>;
-
+export type ValidationError<T extends object> = {
+	-readonly [P in keyof T]?: string;
+};
 type SubmitionError<T extends object> = ValidationError<T>;
 
 type SubmitionErrorHandler<T extends object> = (

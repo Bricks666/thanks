@@ -1,6 +1,5 @@
 export { useKeyListener } from "./useKeyListener";
 export { useFormStepSubmitHandler } from "./useFormStepSubmitHandler";
-export { useCurrentFormStep } from "./useCurrentFormStep";
 export { useOnlyAuthUser } from "./useOnlyAuthUser";
 export { useGetParams } from "./useGetParams";
 export { useRegistrationHandler } from "./useRegistrationHandler";

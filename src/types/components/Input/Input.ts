@@ -1,9 +1,16 @@
+import { PropsWithChildren } from "react";
 import { FieldRenderProps } from "react-final-form";
 import { OnlyClassComponent } from "..";
 
-export interface InputComponent
+export interface InputComponentProps<T>
 	extends OnlyClassComponent,
-		FieldRenderProps<string | undefined, HTMLInputElement> {
+		FieldRenderProps<T, HTMLInputElement> {
 	disabled?: boolean;
 	readonly?: boolean;
 }
+
+export type InputComponent = <
+	T extends string | number | readonly string[] | undefined = string
+>(
+	props: PropsWithChildren<InputComponentProps<T>>
+) => JSX.Element;

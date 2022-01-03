@@ -3,6 +3,8 @@ import React, { FC } from "react";
 import { TextareaComponent } from "../../../types/components";
 import { ErrorMessage } from "../ErrorMessage";
 
+import TextareaStyle from "./Textarea.module.css";
+
 export const Textarea: FC<TextareaComponent> = ({
 	className,
 	children,
@@ -15,10 +17,15 @@ export const Textarea: FC<TextareaComponent> = ({
 	const disable = disabled || meta.submitting;
 
 	return (
-		<label className={classNames(className)}>
+		<label className={classNames(TextareaStyle.label, className)}>
 			{showError && <ErrorMessage>{meta.error}</ErrorMessage>}
 			{children}
-			<textarea {...input} disabled={disable} readOnly={readonly} />
+			<textarea
+				className={TextareaStyle.textarea}
+				{...input}
+				disabled={disable}
+				readOnly={readonly}
+			/>
 		</label>
 	);
 };

@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import React, { FC } from "react";
 import { Link, useLocation } from "react-router-dom";
+import { useLocationState } from "../../../hooks/useLocationState";
 import { SaveLinkComponent } from "../../../types/components";
 
 export const SaveLink: FC<SaveLinkComponent> = ({
@@ -10,7 +11,8 @@ export const SaveLink: FC<SaveLinkComponent> = ({
 	saveState = false,
 }) => {
 	const location = useLocation();
-	const state = saveState ? location : null;
+	const currentState = useLocationState<Location>();
+	const state = saveState ? currentState || location : null;
 
 	return (
 		<Link className={classNames(className)} to={to} state={state}>

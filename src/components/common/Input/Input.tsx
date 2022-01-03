@@ -1,23 +1,30 @@
-import React, { FC } from "react";
+import React from "react";
 import classNames from "classnames";
 import { ErrorMessage } from "../ErrorMessage";
 import { InputComponent } from "../../../types/components";
 
-export const Input: FC<InputComponent> = ({
+import InputStyle from "./Input.module.css";
+
+export const Input: InputComponent = ({
 	className,
-	input,
 	children,
+	input,
 	meta,
 	disabled,
-	readonly,
+	...props
 }) => {
 	const showError = meta.touched && meta.error;
 	const disable = meta.submitting || disabled;
 	return (
-		<label className={classNames(className)}>
+		<label className={classNames(InputStyle.label, className)}>
 			{children}
 			{showError && <ErrorMessage>{meta.error}</ErrorMessage>}
-			<input {...input} disabled={disable} readOnly={readonly} />
+			<input
+				className={InputStyle.input}
+				{...input}
+				disabled={disable}
+				{...props}
+			/>
 		</label>
 	);
 };

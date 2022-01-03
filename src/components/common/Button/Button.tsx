@@ -2,6 +2,8 @@ import React, { FC } from "react";
 import classNames from "classnames";
 import { ButtonComponent } from "../../../types/components";
 
+import ButtonStyle from "./Button.module.css";
+
 export const Button: FC<ButtonComponent> = ({
 	children,
 	className,
@@ -12,7 +14,7 @@ export const Button: FC<ButtonComponent> = ({
 }) => {
 	return (
 		<button
-			className={classNames(className)}
+			className={classNames(ButtonStyle.button, className)}
 			onClick={onClick}
 			title={title}
 			type={type}
