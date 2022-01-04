@@ -1,3 +1,4 @@
+import classNames from "classnames";
 import React, { FC } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { BlockWrapper } from "../../components/common/BlockWrapper";
@@ -27,13 +28,14 @@ export const PostPage: FC<OnlyClassComponent> = ({ className }) => {
 			<PageWrapper>
 				<BlockWrapper>
 					<div className={PostPageStyle.wrapper}>
-						<SectionHeader>{post.name}</SectionHeader>
+						<SectionHeader>{post.postHeader}</SectionHeader>
 						<Picture
 							className={PostPageStyle.photo}
 							picture={post.photo}
-							alt={post.name}
+							alt={classNames(post.firstName, post.secondName, post.patronymic)}
 						/>
-						<Paragraph>{post.text}</Paragraph>
+						<Paragraph>{post.briefAboutPerson}</Paragraph>
+						<Paragraph>{post.whyThanks}</Paragraph>
 						<Paragraph>Автор: {post.author}</Paragraph>
 						<DateTime date={post.date}>Дата добавления: </DateTime>
 					</div>

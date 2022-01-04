@@ -17,9 +17,8 @@ export const PhotoShower: FC<PhotoShowerComponent> = memo(
 			<object
 				className={classNames(PhotoShowerStyle.photoShower, className)}
 				data={totalURL}
-			>
-				{alt}
-			</object>
+				aria-label={alt}
+			></object>
 		);
 	}
 );

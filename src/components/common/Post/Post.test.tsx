@@ -7,12 +7,16 @@ import { Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
 
 const post: PostType = {
-	author: "nanan",
-	date: "2021-10-10",
 	id: 1,
-	name: "Зара",
+	author: "nanan",
+	firstName: "a",
+	secondName: "a",
+	patronymic: "a",
+	postHeader: "a",
+	briefAboutPerson: "a",
+	whyThanks: "a",
 	photo: "11",
-	text: "asd",
+	date: "2021-10-10",
 };
 
 describe("<Post /> component", () => {

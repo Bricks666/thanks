@@ -19,7 +19,10 @@ interface LogoutAction {
 	readonly type: LoginActionTypes.LOGOUT;
 }
 
-export type LoginThunk = FormSubmitHandler<LoginFormValues, TypedThunk<void>>;
+export type LoginThunk = FormSubmitHandler<
+	LoginFormValues,
+	TypedThunk<boolean>
+>;
 export type LogoutThunk = SimpleFunction<TypedThunk<void>>;
 
 export type LoginActions = LogoutAction | LoginAction;

@@ -6,6 +6,7 @@ import { LoginSubmitHandler } from "../types/components";
 import { UseLoginHandler } from "../types/hooks";
 import { useLocationState } from "./useLocationState";
 import { useTypedDispatch } from "./useTypedDispatch";
+import { FORM_ERROR } from "final-form";
 
 export const useLoginHandler: UseLoginHandler = () => {
 	const dispatch = useTypedDispatch();
@@ -14,9 +15,17 @@ export const useLoginHandler: UseLoginHandler = () => {
 
 	return useCallback<LoginSubmitHandler>(
 		async (values, formApi, errorHandler) => {
-			await dispatch(loginThunk(values, formApi, errorHandler));
-			const from = constructFrom(state, "/profile");
-			navigate(from, { replace: true });
+			const isLogged = await dispatch(
+				loginThunk(values, formApi, errorHandler)
+			);
+			if (isLogged) {
+				const from = constructFrom(state, "/profile");
+				navigate(from, { replace: true });
+				formApi.restart();
+			} else {
+				errorHandler &&
+					errorHandler({ [FORM_ERROR]: "Введен неверный логин или пароль" });
+			}
 		},
 		[dispatch, navigate]
 	);

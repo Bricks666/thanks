@@ -1,6 +1,6 @@
 export interface EscortType {
-	text: string;
-	value: string;
-	hasMoreInfo?: true;
-	moreInfo?: string;
+	readonly text: string;
+	readonly value: string;
+	readonly hasMoreInfo?: true;
+	readonly moreInfo?: string;
 }

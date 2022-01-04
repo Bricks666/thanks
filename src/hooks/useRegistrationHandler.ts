@@ -6,6 +6,7 @@ import { registrationThunk } from "../redux";
 import { useNavigate } from "react-router-dom";
 import { useLocationState } from "./useLocationState";
 import { constructFrom } from "../services";
+import { FORM_ERROR } from "final-form";
 
 export const useRegistrationHandler: UseRegistrationHandler = () => {
 	const dispatch = useTypedDispatch();
@@ -13,10 +14,18 @@ export const useRegistrationHandler: UseRegistrationHandler = () => {
 	const state = useLocationState<Location>();
 
 	return useCallback<RegistrationSubmitHandler>(
-		async (values, fromApi) => {
-			await dispatch(registrationThunk(values, fromApi)).then();
-			const from = constructFrom(state, "/profile");
-			navigate(from, { replace: true});
+		async (values, fromApi, errorHandler) => {
+			const isRegistration = await dispatch(registrationThunk(values, fromApi));
+			if (isRegistration) {
+				const from = constructFrom(state, "/profile");
+				navigate(from, { replace: true });
+				fromApi.restart();
+			} else {
+				errorHandler &&
+					errorHandler({
+						[FORM_ERROR]: "Данный пользователь уже зарегистрирован",
+					});
+			}
 		},
 		[dispatch]
 	);

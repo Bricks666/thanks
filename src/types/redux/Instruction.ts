@@ -1,8 +1,8 @@
 import { URL } from "../common";
 
 export interface Instruction {
-	picture: URL;
-	text: string;
+	readonly picture: URL;
+	readonly text: string;
 }
 
 export enum InstructionActionTypes {

@@ -22,7 +22,7 @@ export const Collage: FC<OnlyClassComponent> = ({ className }) => {
 					<Picture
 						className={CollageStyle.picture}
 						picture={post.photo}
-						alt={post.name}
+						alt={post.postHeader}
 					/>
 				</Link>
 			))}

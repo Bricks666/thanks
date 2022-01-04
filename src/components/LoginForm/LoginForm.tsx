@@ -2,13 +2,16 @@ import React, { FC } from "react";
 import { useLoginHandler } from "../../hooks";
 import {
 	LoginFormValues,
+	LoginInitialValues,
 	OnlyClassComponent,
 	ValidationError,
 	Validator,
 } from "../../types/components";
 import { Form, Field } from "react-final-form";
+import { FORM_ERROR } from "final-form";
 import { Input } from "../common/Input/Input";
 import { Button } from "../common/Button";
+import { ErrorMessage } from "../common/ErrorMessage";
 
 const validator: Validator<LoginFormValues> = (values) => {
 	const errors: ValidationError<LoginFormValues> = {};
@@ -24,7 +27,7 @@ const validator: Validator<LoginFormValues> = (values) => {
 	return errors;
 };
 
-const initialValues: LoginFormValues = {
+const initialValues: LoginInitialValues = {
 	login: "",
 	password: "",
 	remember: false,
@@ -38,10 +41,12 @@ export const LoginForm: FC<OnlyClassComponent> = ({ className }) => {
 			onSubmit={login}
 			validate={validator}
 			initialValues={initialValues}
-			subscription={{ submitting: true, invalid: true }}
-			render={({ handleSubmit, invalid }) => {
+			subscription={{ submitting: true, submitErrors: true }}
+			render={({ handleSubmit, submitErrors, submitting }) => {
+				const formError = submitErrors && submitErrors[FORM_ERROR];
 				return (
 					<form className={className} onSubmit={handleSubmit}>
+						{formError && <ErrorMessage>{formError}</ErrorMessage>}
 						<Field name="login" render={Input}>
 							Логин
 						</Field>
@@ -51,7 +56,7 @@ export const LoginForm: FC<OnlyClassComponent> = ({ className }) => {
 						<Field name="remember" type="checkbox" render={Input}>
 							Запомнить меня
 						</Field>
-						<Button type="submit" title="Войти" disabled={invalid}>
+						<Button type="submit" title="Войти" disabled={submitting}>
 							Войти
 						</Button>
 					</form>

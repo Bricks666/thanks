@@ -19,60 +19,16 @@ export const initialState: Store = {
 		{
 			id: 1,
 			author: "Rerere",
-			date: "2019-10-10T03:00:00",
-			name: "Благодарность для мужа",
-			photo: "https://lordfilmq.club/templates/lordfilm/images/bg.jpg",
-			text: "aslkkfhgbaskjdadhjksfbkajsadjkshfbkjajkhsdbfkjhjkasbdfkjhbvasdkfjadfhjksbaskjdadfjkshbkjaajksdhbfkjhjkasdbfkjfhjkasbdfkjfhjkbasdkfjdfhjkbaskjdadfjkshbakjsadjksghbvfkjgghjkasdvfkfgkhasvdfkfgkvasdfkdfgksvasdkghadfghksbvaksjadjkshbfkjajkshdbfkjhjkasdbfkjfhjkbasdkjdfjkhbasdkjadfjkshbaskdjadhjksfbkjasdadhjksbf",
-		},
-		{
-			id: 2,
-			author: "Rerere",
-			date: "2019-10-10T03:00:00",
-			name: "Благодарность для мужа",
+			firstName: "Валентина",
+			secondName: "Сердюк",
+			patronymic: "Григорьевна",
+			postHeader: "Благодарность моей любимой маме",
+			briefAboutPerson:
+				" Она родилась в 1952 году и прожила долгую и счастливую жизнь",
+			whyThanks: "За все то, что она сделала для меня",
 			photo:
-				"https://i08.fotocdn.net/s116/a12aeff86aeacdff/gallery_xl/2648186076.jpg",
-			text: "aslkkfhgbaskjdadhjksfbkajsadjkshfbkjajkhsdbfkjhjkasbdfkjhbvasdkfjadfhjksbaskjdadfjkshbkjaajksdhbfkjhjkasdbfkjfhjkasbdfkjfhjkbasdkfjdfhjkbaskjdadfjkshbakjsadjksghbvfkjgghjkasdvfkfgkhasvdfkfgkvasdfkdfgksvasdkghadfghksbvaksjadjkshbfkjajkshdbfkjhjkasdbfkjfhjkbasdkjdfjkhbasdkjadfjkshbaskdjadhjksfbkjasdadhjksbf",
-		},
-		{
-			id: 3,
-			author: "Rerere",
+				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpics.livejournal.com%2Fu3poccuu%2Fpic%2F002482q2&f=1&nofb=1",
 			date: "2019-10-10T03:00:00",
-			name: "Благодарность для мужа",
-			photo:
-				"https://avatars.mds.yandex.net/i?id=0f138f6dc97425079553ed0d6e3f5f1b-5448159-images-thumbs&ref=rim&n=33&w=225&h=150",
-			text: "aslkkfhgbaskjdadhjksfbkajsadjkshfbkjajkhsdbfkjhjkasbdfkjhbvasdkfjadfhjksbaskjdadfjkshbkjaajksdhbfkjhjkasdbfkjfhjkasbdfkjfhjkbasdkfjdfhjkbaskjdadfjkshbakjsadjksghbvfkjgghjkasdvfkfgkhasvdfkfgkvasdfkdfgksvasdkghadfghksbvaksjadjkshbfkjajkshdbfkjhjkasdbfkjfhjkbasdkjdfjkhbasdkjadfjkshbaskdjadhjksfbkjasdadhjksbf",
-		},
-		{
-			id: 4,
-			author: "Rerere",
-			date: "2019-10-10T03:00:00",
-			name: "Благодарность для мужа",
-			photo: "https://lordfilmq.club/templates/lordfilm/images/bg.jpg",
-			text: "aslkkfhgbaskjdadhjksfbkajsadjkshfbkjajkhsdbfkjhjkasbdfkjhbvasdkfjadfhjksbaskjdadfjkshbkjaajksdhbfkjhjkasdbfkjfhjkasbdfkjfhjkbasdkfjdfhjkbaskjdadfjkshbakjsadjksghbvfkjgghjkasdvfkfgkhasvdfkfgkvasdfkdfgksvasdkghadfghksbvaksjadjkshbfkjajkshdbfkjhjkasdbfkjfhjkbasdkjdfjkhbasdkjadfjkshbaskdjadhjksfbkjasdadhjksbf",
-		},
-		{
-			id: 5,
-			author: "Rerere",
-			date: "2019-10-10T03:00:00",
-			name: "Благодарность для мужа",
-			photo: "https://lordfilmq.club/templates/lordfilm/images/bg.jpg",
-			text: "aslkkfhgbaskjdadhjksfbkajsadjkshfbkjajkhsdbfkjhjkasbdfkjhbvasdkfjadfhjksbaskjdadfjkshbkjaajksdhbfkjhjkasdbfkjfhjkasbdfkjfhjkbasdkfjdfhjkbaskjdadfjkshbakjsadjksghbvfkjgghjkasdvfkfgkhasvdfkfgkvasdfkdfgksvasdkghadfghksbvaksjadjkshbfkjajkshdbfkjhjkasdbfkjfhjkbasdkjdfjkhbasdkjadfjkshbaskdjadhjksfbkjasdadhjksbf",
-		},
-		{
-			id: 6,
-			author: "Rerere",
-			date: "2019-10-10T03:00:00",
-			name: "Благодарность для мужа",
-			photo: "https://lordfilmq.club/templates/lordfilm/images/bg.jpg",
-			text: "aslkkfhgbaskjdadhjksfbkajsadjkshfbkjajkhsdbfkjhjkasbdfkjhbvasdkfjadfhjksbaskjdadfjkshbkjaajksdhbfkjhjkasdbfkjfhjkasbdfkjfhjkbasdkfjdfhjkbaskjdadfjkshbakjsadjksghbvfkjgghjkasdvfkfgkhasvdfkfgkvasdfkdfgksvasdkghadfghksbvaksjadjkshbfkjajkshdbfkjhjkasdbfkjfhjkbasdkjdfjkhbasdkjadfjkshbaskdjadhjksfbkjasdadhjksbf",
-		},
-		{
-			id: 7,
-			author: "Rerere",
-			date: "2019-10-10T03:00:00",
-			name: "Благодарность для мужа",
-			photo: "https://lordfilmq.club/templates/lordfilm/images/bg.jpg",
-			text: "aslkkfhgbaskjdadhjksfbkajsadjkshfbkjajkhsdbfkjhjkasbdfkjhbvasdkfjadfhjksbaskjdadfjkshbkjaajksdhbfkjhjkasdbfkjfhjkasbdfkjfhjkbasdkfjdfhjkbaskjdadfjkshbakjsadjksghbvfkjgghjkasdvfkfgkhasvdfkfgkvasdfkdfgksvasdkghadfghksbvaksjadjkshbfkjajkshdbfkjhjkasdbfkjfhjkbasdkjdfjkhbasdkjadfjkshbaskdjadhjksfbkjasdadhjksbf",
 		},
 	],
 	loadings: {
@@ -98,32 +54,39 @@ export const initialState: Store = {
 	],
 	instructions: [
 		{
-			picture: "aas",
+			picture:
+				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpics.livejournal.com%2Fu3poccuu%2Fpic%2F002482q2&f=1&nofb=1",
 			text: "adasdjbasdlnadsnjansdljdjlnasdnjandlkjasndjnadnljn",
 		},
 		{
-			picture: "aas",
+			picture:
+				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpics.livejournal.com%2Fu3poccuu%2Fpic%2F002482q2&f=1&nofb=1",
 			text: "adasdjbasdlnadsnjansdljdjlnasdnjandlkjasndjnadnljn",
 		},
 
 		{
-			picture: "aas",
+			picture:
+				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpics.livejournal.com%2Fu3poccuu%2Fpic%2F002482q2&f=1&nofb=1",
 			text: "adasdjbasdlnadsnjansdljdjlnasdnjandlkjasndjnadnljn",
 		},
 		{
-			picture: "aas",
+			picture:
+				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpics.livejournal.com%2Fu3poccuu%2Fpic%2F002482q2&f=1&nofb=1",
 			text: "adasdjbasdlnadsnjansdljdjlnasdnjandlkjasndjnadnljn",
 		},
 		{
-			picture: "aas",
+			picture:
+				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpics.livejournal.com%2Fu3poccuu%2Fpic%2F002482q2&f=1&nofb=1",
 			text: "adasdjbasdlnadsnjansdljdjlnasdnjandlkjasndjnadnljn",
 		},
 		{
-			picture: "aas",
+			picture:
+				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpics.livejournal.com%2Fu3poccuu%2Fpic%2F002482q2&f=1&nofb=1",
 			text: "adasdjbasdlnadsnjansdljdjlnasdnjandlkjasndjnadnljn",
 		},
 		{
-			picture: "aas",
+			picture:
+				"https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fpics.livejournal.com%2Fu3poccuu%2Fpic%2F002482q2&f=1&nofb=1",
 			text: "adasdjbasdlnadsnjansdljdjlnasdnjandlkjasndjnadnljn",
 		},
 	],

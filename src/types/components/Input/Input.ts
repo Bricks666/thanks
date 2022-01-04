@@ -5,8 +5,8 @@ import { OnlyClassComponent } from "..";
 export interface InputComponentProps<T>
 	extends OnlyClassComponent,
 		FieldRenderProps<T, HTMLInputElement> {
-	disabled?: boolean;
-	readonly?: boolean;
+	readonly disabled?: boolean;
+	readonly readonly?: boolean;
 }
 
 export type InputComponent = <

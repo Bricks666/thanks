@@ -1,5 +1,5 @@
 import React, { FC } from "react";
-import { useContacts } from "../../hooks/useContacts";
+import { useContacts } from "../../hooks";
 import { OnlyClassComponent } from "../../types/components";
 import { List } from "../common/List";
 import { Contact } from "../Contact";

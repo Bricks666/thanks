@@ -5,9 +5,9 @@ import { OnlyClassComponent } from "..";
 export interface SelectComponentProps<T>
 	extends OnlyClassComponent,
 		FieldRenderProps<T, HTMLSelectElement> {
-	options?: T[];
-	optionClassName?: string;
-	disabled?: boolean;
+	readonly options?: T[];
+	readonly optionClassName?: string;
+	readonly disabled?: boolean;
 }
 export type SelectComponent = <T extends string | number>(
 	props: PropsWithChildren<SelectComponentProps<T>>

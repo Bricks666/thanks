@@ -1,11 +1,17 @@
+import { TypedThunk } from ".";
 import { DateType, ID, URL } from "../common";
+import { CreatePostFormValues } from "../components/CreatePostForm";
 
 export interface Post {
 	readonly id: ID;
-	readonly name: string;
-	readonly photo: URL;
-	readonly text: string;
 	readonly author: string;
+	readonly firstName: string;
+	readonly secondName: string;
+	readonly patronymic: string;
+	readonly postHeader: string;
+	readonly briefAboutPerson: string;
+	readonly whyThanks: string;
+	readonly photo: URL;
 	readonly date: DateType;
 }
 
@@ -24,3 +30,7 @@ interface AddPostsAction {
 export type PostsActions = AddPostsAction;
 
 export type AddPostsAC = (posts: Post[]) => AddPostsAction;
+
+export type CreatePostThunk = (
+	newPostData: CreatePostFormValues
+) => TypedThunk<void>;

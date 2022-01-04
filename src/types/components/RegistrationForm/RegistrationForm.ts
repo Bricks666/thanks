@@ -1,4 +1,4 @@
-import { FormSubmitHandler } from "..";
+import { FormSubmitHandler, InitialFormValues } from "..";
 
 export interface RegistrationFormValues {
 	readonly login: string;
@@ -8,3 +8,6 @@ export interface RegistrationFormValues {
 
 export type RegistrationSubmitHandler =
 	FormSubmitHandler<RegistrationFormValues>;
+
+export type RegistrationInitialValues =
+	InitialFormValues<RegistrationFormValues>;

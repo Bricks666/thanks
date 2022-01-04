@@ -10,21 +10,30 @@ import PostStyle from "./Post.module.css";
 
 export const Post: FC<PostComponent> = ({
 	className,
-	author,
 	id,
+	author,
+	firstName,
+	secondName,
+	patronymic,
+	postHeader,
+	briefAboutPerson,
+	whyThanks,
 	photo,
-	text,
-	name,
 	date,
 }) => {
 	return (
 		<article className={classNames(PostStyle.post, className)}>
-			<Paragraph className={PostStyle.name}>{name}</Paragraph>
-			<Picture className={PostStyle.photo} picture={photo} alt={name} />
-			<Paragraph className={PostStyle.text}>{text}</Paragraph>
+			<Paragraph className={PostStyle.name}>{postHeader}</Paragraph>
+			<Picture
+				className={PostStyle.photo}
+				picture={photo}
+				alt={classNames(firstName, secondName, patronymic)}
+			/>
+			<Paragraph className={PostStyle.text}>{briefAboutPerson}</Paragraph>
+			<Paragraph className={PostStyle.text}>{whyThanks}</Paragraph>
 			<Paragraph className={PostStyle.author}>{author}</Paragraph>
 			<DateTime className={PostStyle.date} date={date} />
-			<Link className={PostStyle.more} to={`/posts/${id}`} replace={true}>
+			<Link className={PostStyle.more} to={`/posts/${id}`}>
 				Читать подробнее
 			</Link>
 		</article>

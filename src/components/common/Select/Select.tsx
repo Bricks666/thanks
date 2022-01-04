@@ -10,9 +10,7 @@ export const Select: SelectComponent = ({
 	meta,
 	disabled,
 	children,
-	...rest
 }) => {
-	console.log(rest);
 	const disable = meta.submitting || disabled;
 	const showError = meta.error && meta.touched;
 	return (

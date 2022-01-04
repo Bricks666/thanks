@@ -1,2 +1,2 @@
 export { constructFrom } from "./constructFrom";
-export { getFromSessionStorage } from "./getFromSessionStorage";
+export { toNewPostFromForm } from "./toNewPostFromForm";

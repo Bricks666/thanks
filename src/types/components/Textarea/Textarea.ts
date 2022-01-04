@@ -4,6 +4,6 @@ import { OnlyClassComponent } from "..";
 export interface TextareaComponent
 	extends OnlyClassComponent,
 		FieldRenderProps<string, HTMLTextAreaElement> {
-	disabled?: boolean;
-	readonly?: boolean;
+	readonly disabled?: boolean;
+	readonly readonly?: boolean;
 }

@@ -3,14 +3,17 @@ import { useRegistrationHandler } from "../../hooks";
 import {
 	OnlyClassComponent,
 	RegistrationFormValues,
+	RegistrationInitialValues,
 	ValidationError,
 	Validator,
 } from "../../types/components";
 import { Form, Field } from "react-final-form";
+import { FORM_ERROR } from "final-form";
 import { Button } from "../common/Button";
 import { Input } from "../common/Input/Input";
+import { ErrorMessage } from "../common/ErrorMessage";
 
-const initialValues: RegistrationFormValues = {
+const initialValues: RegistrationInitialValues = {
 	login: "",
 	password: "",
 	passwordAgain: "",
@@ -40,10 +43,12 @@ export const RegistrationForm: FC<OnlyClassComponent> = ({ className }) => {
 			onSubmit={registration}
 			initialValues={initialValues}
 			validate={validator}
-			subscription={{ submitting: true, invalid: true }}
-			render={({ handleSubmit, invalid }) => {
+			subscription={{ submitting: true, submitErrors: true }}
+			render={({ handleSubmit, submitting, submitErrors }) => {
+				const formError = submitErrors && submitErrors[FORM_ERROR];
 				return (
 					<form className={className} onSubmit={handleSubmit}>
+						{formError && <ErrorMessage>{formError}</ErrorMessage>}
 						<Field name="login" render={Input}>
 							Логин
 						</Field>
@@ -53,7 +58,11 @@ export const RegistrationForm: FC<OnlyClassComponent> = ({ className }) => {
 						<Field name="passwordAgain" type="password" render={Input}>
 							Повторите пароль
 						</Field>
-						<Button type="submit" title="Зарегистрироваться" disabled={invalid}>
+						<Button
+							type="submit"
+							title="Зарегистрироваться"
+							disabled={submitting}
+						>
 							Зарегистрироваться
 						</Button>
 					</form>

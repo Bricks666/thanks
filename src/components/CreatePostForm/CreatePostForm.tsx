@@ -1,6 +1,7 @@
 import classNames from "classnames";
 import React, { FC } from "react";
 import { Field, Form } from "react-final-form";
+import { useCreatePostHandler } from "../../hooks";
 import {
 	OnlyClassComponent,
 	ValidationError,
@@ -16,6 +17,8 @@ import { Input } from "../common/Input";
 import { PhotoShower } from "../common/PhotoShower";
 import { Select } from "../common/Select";
 import { Textarea } from "../common/Textarea";
+import { FORM_ERROR } from "final-form";
+import { ErrorMessage } from "../common/ErrorMessage";
 
 import CreatePostFormStyle from "./CreatePostForm.module.css";
 
@@ -62,14 +65,17 @@ const initialValue: CreatePostFormValues = {
 };
 
 export const CreatePostForm: FC<OnlyClassComponent> = ({ className }) => {
+	const submitHandler = useCreatePostHandler();
+
 	return (
 		<Form<CreatePostFormValues>
-			onSubmit={(...args) => console.log(args)}
-			subscription={{ submitting: true, invalid: true, values: true }}
+			onSubmit={submitHandler}
+			subscription={{ submitting: true, values: true, submitErrors: true }}
 			validate={validation}
 			initialValues={initialValue}
-			render={({ handleSubmit, invalid, submitting, values }) => {
+			render={({ handleSubmit, submitting, values, submitErrors }) => {
 				const { photo } = values || initialValue;
+				const formError = submitErrors && submitErrors[FORM_ERROR];
 				return (
 					<form
 						className={classNames(CreatePostFormStyle.form, className)}
@@ -78,6 +84,7 @@ export const CreatePostForm: FC<OnlyClassComponent> = ({ className }) => {
 						<legend className={CreatePostFormStyle.legend}>
 							Получатель благодарности
 						</legend>
+						{formError && <ErrorMessage>{formError}</ErrorMessage>}
 						<Field<string, HTMLInputElement> name="firstName" component={Input}>
 							Имя человека
 						</Field>
@@ -130,7 +137,7 @@ export const CreatePostForm: FC<OnlyClassComponent> = ({ className }) => {
 							className={CreatePostFormStyle.button}
 							title="Оставить благодарность"
 							type="submit"
-							disabled={invalid || submitting}
+							disabled={submitting}
 						>
 							Оставить благодарность
 						</Button>

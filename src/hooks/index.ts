@@ -1,5 +1,4 @@
 export { useKeyListener } from "./useKeyListener";
-export { useFormStepSubmitHandler } from "./useFormStepSubmitHandler";
 export { useOnlyAuthUser } from "./useOnlyAuthUser";
 export { useGetParams } from "./useGetParams";
 export { useRegistrationHandler } from "./useRegistrationHandler";
@@ -13,3 +12,5 @@ export { useLogoutHandler } from "./useLogoutHandler";
 export { useNavigation } from "./useNavigation";
 export { useInstructions } from "./useInstructions";
 export { useHover } from "./useHover";
+export { useCreatePostHandler } from "./useCreatePostHandler";
+export { useContacts } from "./useContacts";
