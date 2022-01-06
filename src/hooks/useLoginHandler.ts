@@ -15,9 +15,7 @@ export const useLoginHandler: UseLoginHandler = () => {
 
 	return useCallback<LoginSubmitHandler>(
 		async (values, formApi, errorHandler) => {
-			const isLogged = await dispatch(
-				loginThunk(values, formApi, errorHandler)
-			);
+			const isLogged = await dispatch(loginThunk(values));
 			if (isLogged) {
 				const from = constructFrom(state, "/profile");
 				navigate(from, { replace: true });

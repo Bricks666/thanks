@@ -1,12 +1,8 @@
 import {
+	EndLoadingAC,
 	LoadingActionTypes,
-	LoadingAppEndAC,
-	LoadingAppStartAC,
-	LoadingPostsEndAC,
-	LoadingPostsStartAC,
-	LoadingProfileEndAC,
-	LoadingProfileStartAC,
 	LoadingsActions,
+	StartLoadingAC,
 } from "../../types/redux";
 import { initialState } from "../initialState";
 
@@ -15,40 +11,16 @@ export default function reducer(
 	action: LoadingsActions
 ) {
 	switch (action.type) {
-		case LoadingActionTypes.LOADING_APP_START: {
+		case LoadingActionTypes.START_LOADING: {
 			return {
 				...state,
-				loadingApp: true,
+				[action.payload.loadingName]: true,
 			};
 		}
-		case LoadingActionTypes.LOADING_APP_END: {
+		case LoadingActionTypes.END_LOADING: {
 			return {
 				...state,
-				loadingApp: false,
-			};
-		}
-		case LoadingActionTypes.LOADING_PROFILE_START: {
-			return {
-				...state,
-				loadingProfile: true,
-			};
-		}
-		case LoadingActionTypes.LOADING_PROFILE_END: {
-			return {
-				...state,
-				loadingProfile: false,
-			};
-		}
-		case LoadingActionTypes.LOADING_POSTS_START: {
-			return {
-				...state,
-				loadingPosts: true,
-			};
-		}
-		case LoadingActionTypes.LOADING_POSTS_END: {
-			return {
-				...state,
-				loadingPosts: false,
+				[action.payload.loadingName]: false,
 			};
 		}
 
@@ -58,38 +30,20 @@ export default function reducer(
 	}
 }
 
-export const loadingAppStartAC: LoadingAppStartAC = () => {
+export const startLoadingAC: StartLoadingAC = (loadingName) => {
 	return {
-		type: LoadingActionTypes.LOADING_APP_START,
+		type: LoadingActionTypes.START_LOADING,
+		payload: {
+			loadingName,
+		},
 	};
 };
 
-export const loadingAppEndAC: LoadingAppEndAC = () => {
+export const endLoadingAC: EndLoadingAC = (loadingName) => {
 	return {
-		type: LoadingActionTypes.LOADING_APP_END,
-	};
-};
-
-export const loadingProfileStartAC: LoadingProfileStartAC = () => {
-	return {
-		type: LoadingActionTypes.LOADING_PROFILE_START,
-	};
-};
-
-export const loadingProfileEndAC: LoadingProfileEndAC = () => {
-	return {
-		type: LoadingActionTypes.LOADING_PROFILE_END,
-	};
-};
-
-export const loadingPostsStartAC: LoadingPostsStartAC = () => {
-	return {
-		type: LoadingActionTypes.LOADING_POSTS_START,
-	};
-};
-
-export const loadingPostsEndAC: LoadingPostsEndAC = () => {
-	return {
-		type: LoadingActionTypes.LOADING_POSTS_END,
+		type: LoadingActionTypes.END_LOADING,
+		payload: {
+			loadingName,
+		},
 	};
 };

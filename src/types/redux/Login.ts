@@ -1,6 +1,6 @@
 import { SimpleFunction } from "./../common/Common";
 import { TypedThunk } from ".";
-import { FormSubmitHandler, LoginFormValues } from "../components";
+import { LoginFormValues } from "../components";
 
 export interface LoginState {
 	readonly isLogin: boolean;
@@ -19,10 +19,7 @@ interface LogoutAction {
 	readonly type: LoginActionTypes.LOGOUT;
 }
 
-export type LoginThunk = FormSubmitHandler<
-	LoginFormValues,
-	TypedThunk<boolean>
->;
+export type LoginThunk = (values: LoginFormValues) => TypedThunk<boolean>;
 export type LogoutThunk = SimpleFunction<TypedThunk<void>>;
 
 export type LoginActions = LogoutAction | LoginAction;

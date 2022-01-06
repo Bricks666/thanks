@@ -1,4 +1,5 @@
 import {
+	AddPaymentAC,
 	PaymentsActions,
 	PaymentsActionTypes,
 	SetPaymentsAC,
@@ -9,11 +10,17 @@ export default function reducer(
 	state = initialState.payments,
 	action: PaymentsActions
 ) {
-	if (action.type === PaymentsActionTypes.SET_PAYMENTS) {
-		return [...state, ...action.payload.payments];
+	switch (action.type) {
+		case PaymentsActionTypes.SET_PAYMENTS: {
+			return action.payload.payments;
+		}
+		case PaymentsActionTypes.ADD_PAYMENT: {
+			return [...state, action.payload.payment];
+		}
+		default: {
+			return state;
+		}
 	}
-
-	return state;
 }
 
 export const setPaymentsAC: SetPaymentsAC = (payments) => {
@@ -21,6 +28,15 @@ export const setPaymentsAC: SetPaymentsAC = (payments) => {
 		type: PaymentsActionTypes.SET_PAYMENTS,
 		payload: {
 			payments,
+		},
+	};
+};
+
+export const addPaymentAC: AddPaymentAC = (payment) => {
+	return {
+		type: PaymentsActionTypes.ADD_PAYMENT,
+		payload: {
+			payment,
 		},
 	};
 };

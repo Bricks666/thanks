@@ -23,7 +23,6 @@ export const SelectedPost: FC<OnlyClassComponent> = ({ className }) => {
 		return null;
 	}
 
-	/* TODO:Переделать закрытие */
 
 	return (
 		<MainPopup

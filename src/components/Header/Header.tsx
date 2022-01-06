@@ -10,6 +10,8 @@ import { PageWrapper } from "../common/PageWrapper";
 import { BlockWrapper } from "../common/BlockWrapper";
 import { Link } from "react-router-dom";
 
+/* TODO: Провести рефакторинг, вынести логику с выбором в отдельный компонент */
+
 export const Header: FC<OnlyClassComponent> = ({ className }) => {
 	const isLogin = useIsLogin();
 

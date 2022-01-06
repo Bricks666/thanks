@@ -1,3 +1,3 @@
-import { LogoutThunk } from "../redux";
+import { SimpleFunction } from "../common";
 
-export type UseLogoutHandler = () => LogoutThunk;
+export type UseLogoutHandler = SimpleFunction<VoidFunction>;

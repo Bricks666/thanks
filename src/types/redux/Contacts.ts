@@ -1,4 +1,5 @@
-import { ID } from "../common";
+import { TypedThunk } from ".";
+import { ID, SimpleFunction } from "../common";
 
 export interface Contact {
 	readonly id: ID;
@@ -22,3 +23,4 @@ interface SetContactsAction {
 export type ContactsActions = SetContactsAction;
 
 export type SetContactsAC = (contacts: Contact[]) => SetContactsAction;
+export type LoadContactsThunk = SimpleFunction<TypedThunk<void>>;

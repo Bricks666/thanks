@@ -1,5 +1,5 @@
 import { TypedThunk } from ".";
-import { DateType, ID, URL } from "../common";
+import { DateType, ID, SimpleFunction, URL } from "../common";
 import { CreatePostFormValues } from "../components/CreatePostForm";
 
 export interface Post {
@@ -16,21 +16,34 @@ export interface Post {
 }
 
 export enum PostsActionTypes {
-	ADD_POSTS = "thanks/posts/ADD_POSTS",
+	ADD_POST = "thanks/posts/ADD_POST",
+	SET_POSTS = "thanks/posts/SET_POSTS",
 }
-interface AddPostsPayload {
+interface AddPostPayload {
+	readonly post: Post;
+}
+
+interface AddPostAction {
+	readonly type: PostsActionTypes.ADD_POST;
+	readonly payload: AddPostPayload;
+}
+
+interface SetPostsPayload {
 	readonly posts: Post[];
 }
 
-interface AddPostsAction {
-	readonly type: PostsActionTypes.ADD_POSTS;
-	readonly payload: AddPostsPayload;
+interface SetPostsAction {
+	readonly type: PostsActionTypes.SET_POSTS;
+	readonly payload: SetPostsPayload;
 }
 
-export type PostsActions = AddPostsAction;
+export type PostsActions = AddPostAction | SetPostsAction;
 
-export type AddPostsAC = (posts: Post[]) => AddPostsAction;
+export type SetPostsAC = (posts: Post[]) => SetPostsAction;
+export type AddPostAC = (post: Post) => AddPostAction;
 
 export type CreatePostThunk = (
 	newPostData: CreatePostFormValues
 ) => TypedThunk<void>;
+
+export type LoadPostsThunk = SimpleFunction<TypedThunk<void>>;

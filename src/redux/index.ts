@@ -1,16 +1,21 @@
 export { store } from "./store";
 export {
-	loadingAppEndAC,
-	loadingAppStartAC,
-	loadingPostsEndAC,
-	loadingPostsStartAC,
-	loadingProfileEndAC,
-	loadingProfileStartAC,
+	startLoadingAC,
+	endLoadingAC,
 	loginAC,
 	logoutAC,
 	setPaymentsAC,
 	setProfileAC,
-	addPostsAC,
+	addPostAC,
 	setInstructionAC,
 } from "./reducers";
-export { registrationThunk, loginThunk } from "./thunks";
+export {
+	registrationThunk,
+	loginThunk,
+	logoutThunk,
+	loadPaymentsThunk,
+	loadProfileThunk,
+	loadPostsThunk,
+	loadInstructionsThunk,
+	loadContactsThunk,
+} from "./thunks";

@@ -20,3 +20,4 @@ export * from "./Paragraph";
 export * from "./FileInput";
 export * from "./PhotoShower";
 export * from "./Select";
+export * from "./LoadingWrapper";

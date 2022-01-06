@@ -3,6 +3,7 @@ import { UseHover } from "../types/hooks";
 
 export const useHover: UseHover = (ref) => {
 	const [isHover, setIsHover] = useState<boolean>(false);
+
 	useEffect(() => {
 		const current = ref.current;
 		if (current !== null) {
@@ -21,5 +22,6 @@ export const useHover: UseHover = (ref) => {
 			}
 		};
 	}, [setIsHover, ref]);
+
 	return isHover;
 };

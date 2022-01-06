@@ -10,10 +10,7 @@ export default function reducer(
 	action: ProfileActions
 ) {
 	if (action.type === ProfileActionTypes.SET_PROFILE) {
-		return {
-			...state,
-			...action.payload.profile,
-		};
+		return action.payload.profile;
 	}
 
 	return state;

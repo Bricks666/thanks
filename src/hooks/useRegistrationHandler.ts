@@ -15,7 +15,8 @@ export const useRegistrationHandler: UseRegistrationHandler = () => {
 
 	return useCallback<RegistrationSubmitHandler>(
 		async (values, fromApi, errorHandler) => {
-			const isRegistration = await dispatch(registrationThunk(values, fromApi));
+			const isRegistration = await dispatch(registrationThunk(values));
+
 			if (isRegistration) {
 				const from = constructFrom(state, "/profile");
 				navigate(from, { replace: true });
@@ -27,6 +28,6 @@ export const useRegistrationHandler: UseRegistrationHandler = () => {
 					});
 			}
 		},
-		[dispatch]
+		[dispatch, navigate]
 	);
 };

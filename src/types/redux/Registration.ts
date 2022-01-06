@@ -1,7 +1,6 @@
 import { TypedThunk } from ".";
-import { FormSubmitHandler, RegistrationFormValues } from "../components";
+import { RegistrationFormValues } from "../components";
 
-export type RegistrationThunk = FormSubmitHandler<
-	RegistrationFormValues,
-	TypedThunk<boolean>
->;
+export type RegistrationThunk = (
+	values: RegistrationFormValues
+) => TypedThunk<boolean>;

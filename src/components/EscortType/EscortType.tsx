@@ -7,8 +7,8 @@ import { MoreInfo } from "../common/MoreInfo";
 
 export const EscortType: FC<OnlyClassComponent> = () => {
 	return (
-		<div>
-			<p>Сопровождение</p>
+		<fieldset>
+			<legend>Сопровождение</legend>
 			{escortTypes.map((type) => {
 				return (
 					<Field
@@ -32,6 +32,6 @@ export const EscortType: FC<OnlyClassComponent> = () => {
 					</Field>
 				);
 			})}
-		</div>
+		</fieldset>
 	);
 };

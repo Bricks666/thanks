@@ -1,4 +1,5 @@
-import { ID, URL } from "../common";
+import { TypedThunk } from ".";
+import { ID, SimpleFunction, URL } from "../common";
 
 export interface ProfileState {
 	readonly id: ID;
@@ -22,3 +23,5 @@ interface SetProfileAction {
 export type ProfileActions = SetProfileAction;
 
 export type SetProfileAC = (profile: ProfileState) => SetProfileAction;
+
+export type LoadProfileThunk = SimpleFunction<TypedThunk<void>>;

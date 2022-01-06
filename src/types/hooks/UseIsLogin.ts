@@ -1,1 +1,3 @@
-export type UseIsLogin = () => boolean;
+import { SimpleFunction } from "../common";
+
+export type UseIsLogin = SimpleFunction<boolean>;

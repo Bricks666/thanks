@@ -1,4 +1,5 @@
-import { URL } from "../common";
+import { TypedThunk } from ".";
+import { SimpleFunction, URL } from "../common";
 
 export interface Instruction {
 	readonly picture: URL;
@@ -23,3 +24,5 @@ export type InstructionActions = SetInstructionAction;
 export type SetInstructionAC = (
 	instructions: Instruction[]
 ) => SetInstructionAction;
+
+export type LoadInstructionsThunk = SimpleFunction<TypedThunk<void>>;

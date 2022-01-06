@@ -1,3 +1,4 @@
+import { SimpleFunction } from "../common";
 import { LoginSubmitHandler } from "../components";
 
-export type UseLoginHandler = () => LoginSubmitHandler;
+export type UseLoginHandler = SimpleFunction<LoginSubmitHandler>;

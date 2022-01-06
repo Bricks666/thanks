@@ -21,16 +21,9 @@ export const rootState = combineReducers<Store>({
 });
 
 export { setProfileAC } from "./profileReducer";
-export { addPostsAC } from "./postsReducer";
-export {
-	loadingAppEndAC,
-	loadingAppStartAC,
-	loadingPostsEndAC,
-	loadingPostsStartAC,
-	loadingProfileEndAC,
-	loadingProfileStartAC,
-} from "./loadingsReducer";
+export { addPostAC, setPostsAC } from "./postsReducer";
+export { startLoadingAC, endLoadingAC } from "./loadingsReducer";
 export { loginAC, logoutAC } from "./loginReducer";
-export { setPaymentsAC } from "./paymentsReducer";
+export { setPaymentsAC, addPaymentAC } from "./paymentsReducer";
 export { setContactsAC } from "./contactsReducer";
 export { setInstructionAC } from "./instructionReducer";

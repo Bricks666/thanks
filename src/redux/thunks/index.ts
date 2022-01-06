@@ -1,4 +1,9 @@
+export { loadContactsThunk } from "./loadContactsThunk";
+export { loadInstructionsThunk } from "./loadInstructionsThunk";
 export { loginThunk } from "./loginThunk";
 export { registrationThunk } from "./registrationThunk";
 export { logoutThunk } from "./logoutThunk";
 export { createPostThunk } from "./createPostThunk";
+export { loadProfileThunk } from "./loadProfileThunk";
+export { loadPaymentsThunk } from "./loadPaymentsThunk";
+export { loadPostsThunk } from "./loadPostsThunk";

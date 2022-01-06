@@ -63,7 +63,7 @@ const initialValue: CreatePostFormValues = {
 	briefAboutPerson: "",
 	whyThanks: "",
 };
-
+/* TODO: Провести рефакторинг, форма слишком большая */
 export const CreatePostForm: FC<OnlyClassComponent> = ({ className }) => {
 	const submitHandler = useCreatePostHandler();
 
